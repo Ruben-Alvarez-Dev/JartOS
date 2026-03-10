@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Configuration
 OPENCLAW_URL = "http://127.0.0.1:18789"
+A2A_ENDPOINT_URL = "http://localhost:18790/api/a2a"  # A2A Endpoint Server
 TELEGRAM_TOKEN = "YOUR_TELEGRAM_TOKEN"
 TELEGRAM_CHAT_ID = 795606301
 HEADERS = {"Content-Type": "application/json"}
@@ -56,7 +57,7 @@ def send_a2a_message(message_type, payload):
     try:
         with httpx.Client(timeout=10) as client:
             response = client.post(
-                f"{OPENCLAW_URL}/api/a2a",
+                A2A_ENDPOINT_URL,
                 json=full_payload,
                 headers=HEADERS
             )
@@ -74,7 +75,7 @@ def send_a2a_message(message_type, payload):
             
             return response.status_code, response_data
     except httpx.ConnectError as e:
-        error_data = {"error": "Connection refused - OpenClaw Gateway not available", "details": str(e)}
+        error_data = {"error": "Connection refused - A2A Endpoint not available", "details": str(e)}
         
         # Log error
         a2a_logger.log_communication(
