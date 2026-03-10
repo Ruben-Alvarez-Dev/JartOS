@@ -29,7 +29,7 @@
 │   └── ✅ Semana 5-6: Sprint 1 (LiveKit Server)
 │
 ├── ABRIL (Q2)
-│   ├── 🟡 Semana 7-8: Sprint 2 (Agents)
+│   ├── 🟡 Semana 7-8: Sprint 2 (Agents + OpenClaw)
 │   ├── 🟡 Semana 9-10: Sprint 3 (TTS)
 │   └── 🟡 Semana 11-12: Sprint 4 (STT)
 │
@@ -105,20 +105,28 @@
 | 1.1 Docker Compose | ✅ Completado | 100% |
 | 1.2 LiveKit CLI | ✅ Completado | 100% |
 | 1.3 Web Client Test | ✅ Completado | 100% |
+| 1.4 SSL/TLS (Oficial) | ✅ Completado | 100% |
 
 **Checklist Sprint 1:**
-- [x] 1.1.1 Crear docker-compose.yml para LiveKit ✅
-- [x] 1.1.2 Configurar Redis (requerido) ✅
+- [x] 1.1.1 Crear docker-compose.yml para LiveKit ✅ (network_mode: host)
+- [x] 1.1.2 Configurar Redis (requerido) ✅ (redis:7-alpine)
 - [x] 1.1.3 Configurar PostgreSQL (opcional) ✅ (no requerido)
-- [x] 1.1.4 Configurar LiveKit server YAML ✅
-- [x] 1.2.1 Instalar LiveKit CLI ✅ (v2.15.0)
-- [x] 1.2.2 Autenticar con proyecto ✅ (config manual)
+- [x] 1.1.4 Configurar LiveKit server YAML ✅ (config.yaml oficial)
+- [x] 1.2.1 Instalar LiveKit CLI ✅ (v2.15.0 oficial)
+- [x] 1.2.2 Autenticar con proyecto ✅ (~/.config/livekit/livekit.toml)
 - [x] 1.2.3 Crear rooms de test ✅ (openclaw-test-1)
 - [x] 1.2.4 Verificar conectividad ✅
 - [x] 1.3.1 Deploy LiveKit example web client ✅
 - [x] 1.3.2 Probar conexión desde browser ✅
 - [x] 1.3.3 Probar audio/video ✅ (web client con token API)
 - [x] 1.3.4 Verificar latencia ✅
+- [x] 1.4.1 Instalar certbot ✅
+- [x] 1.4.2 Obtener certificado Let's Encrypt ✅ (válido hasta 2026-06-08)
+- [x] 1.4.3 Configurar TLS en LiveKit ✅ (/opt/livekit/certs/)
+- [x] 1.4.4 Configurar TURN server ✅ (puerto 5349 TLS)
+- [x] 1.4.5 Configurar firewall ✅ (443, 7881, 5349, 50000-60000/udp)
+- [x] 1.4.6 Configurar Caddy reverse proxy ✅
+- [x] 1.4.7 Configurar Tailscale Serve ✅ (HTTPS tailnet)
 
 ---
 

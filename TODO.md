@@ -17,7 +17,7 @@ INFRASTRUCTURE SETUP
 [x] 0.1.1 - Verificar VPS specs ✅ (CPU, RAM, disco, bandwidth)
 [x] 0.1.2 - Instalar Docker + Docker Compose ✅
 [x] 0.1.3 - Configurar red Docker ✅ (openclaw-network)
-[x] 0.1.4 - Preparar dominios/subdominios ✅ (livekit, api, agents)
+[x] 0.1.4 - Preparar dominios/subdominios ✅ (livekit.alvarezconsult.es)
 
 LIVEKIT SELF-HOSTED SETUP
 [x] 0.2.1 - Configurar LiveKit server (Docker) ✅
@@ -39,14 +39,14 @@ DOCUMENTACIÓN
 
 ```
 DOCKER COMPOSE
-[x] 1.1.1 - Crear docker-compose.yml para LiveKit ✅
-[x] 1.1.2 - Configurar Redis (requerido) ✅
+[x] 1.1.1 - Crear docker-compose.yml para LiveKit ✅ (network_mode: host)
+[x] 1.1.2 - Configurar Redis (requerido) ✅ (redis:7-alpine)
 [x] 1.1.3 - Configurar PostgreSQL (opcional) ✅ (no requerido)
-[x] 1.1.4 - Configurar LiveKit server YAML ✅
+[x] 1.1.4 - Configurar LiveKit server YAML ✅ (config.yaml oficial)
 
 LIVEKIT CLI
-[x] 1.2.1 - Instalar LiveKit CLI ✅ (v2.15.0)
-[x] 1.2.2 - Autenticar con proyecto ✅ (config manual)
+[x] 1.2.1 - Instalar LiveKit CLI ✅ (v2.15.0 oficial)
+[x] 1.2.2 - Autenticar con proyecto ✅ (config ~/.config/livekit/livekit.toml)
 [x] 1.2.3 - Crear rooms de test ✅ (openclaw-test-1)
 [x] 1.2.4 - Verificar conectividad ✅
 
@@ -55,6 +55,15 @@ WEB CLIENT TEST
 [x] 1.3.2 - Probar conexión desde browser ✅
 [x] 1.3.3 - Probar audio/video ✅ (web client con token API)
 [x] 1.3.4 - Verificar latencia ✅
+
+SSL/TLS (Oficial LiveKit Docs)
+[x] 1.4.1 - Instalar certbot ✅
+[x] 1.4.2 - Obtener certificado Let's Encrypt ✅ (válido hasta 2026-06-08)
+[x] 1.4.3 - Configurar TLS en LiveKit ✅ (certs en /opt/livekit/certs/)
+[x] 1.4.4 - Configurar TURN server ✅ (puerto 5349 TLS)
+[x] 1.4.5 - Configurar firewall ✅ (443, 7881, 5349, 50000-60000/udp)
+[x] 1.4.6 - Configurar Caddy reverse proxy ✅
+[x] 1.4.7 - Configurar Tailscale Serve ✅ (HTTPS tailnet)
 ```
 
 ---
