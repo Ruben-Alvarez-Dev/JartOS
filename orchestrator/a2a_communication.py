@@ -6,15 +6,28 @@ Target: OpenClaw Gateway (Controlled)
 
 This script sends A2A messages and commands to OpenClaw Gateway
 to implement the LiveKit integration plan.
+
+All communications are logged and sent to Telegram in real-time.
 """
 
 import httpx
 import json
+import os
+import sys
 from datetime import datetime
+
+# Add orchestrator directory to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Configuration
 OPENCLAW_URL = "http://127.0.0.1:18789"
+TELEGRAM_TOKEN = "YOUR_TELEGRAM_TOKEN"
+TELEGRAM_CHAT_ID = 795606301
 HEADERS = {"Content-Type": "application/json"}
+
+# Initialize A2A Logger
+from a2a_logger import init_a2a_logger, A2ALogger
+a2a_logger = init_a2a_logger(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
 
 def print_header(text):
     print("\n" + "="*60)
@@ -22,7 +35,7 @@ def print_header(text):
     print("="*60)
 
 def send_a2a_message(message_type, payload):
-    """Send A2A message to OpenClaw Gateway"""
+    """Send A2A message to OpenClaw Gateway with logging"""
     full_payload = {
         "type": message_type,
         "timestamp": datetime.now().isoformat(),
@@ -30,6 +43,16 @@ def send_a2a_message(message_type, payload):
         "payload": payload
     }
     
+    # Log outbound message
+    a2a_logger.log_communication(
+        msg_type=message_type,
+        direction="outbound",
+        sender="MCP-Orchestrator",
+        receiver="OpenClaw-Gateway",
+        payload=full_payload,
+        status="sent"
+    )
+
     try:
         with httpx.Client(timeout=10) as client:
             response = client.post(
@@ -37,11 +60,47 @@ def send_a2a_message(message_type, payload):
                 json=full_payload,
                 headers=HEADERS
             )
-            return response.status_code, response.json()
-    except httpx.ConnectError:
-        return 0, {"error": "Connection refused - OpenClaw Gateway not available"}
+            response_data = response.json() if response.status_code == 200 else {"error": response.text}
+            
+            # Log response
+            a2a_logger.log_communication(
+                msg_type=message_type,
+                direction="inbound",
+                sender="OpenClaw-Gateway",
+                receiver="MCP-Orchestrator",
+                payload=response_data,
+                status="received" if response.status_code == 200 else "error"
+            )
+            
+            return response.status_code, response_data
+    except httpx.ConnectError as e:
+        error_data = {"error": "Connection refused - OpenClaw Gateway not available", "details": str(e)}
+        
+        # Log error
+        a2a_logger.log_communication(
+            msg_type=message_type,
+            direction="inbound",
+            sender="OpenClaw-Gateway",
+            receiver="MCP-Orchestrator",
+            payload=error_data,
+            status="error"
+        )
+        
+        return 0, error_data
     except Exception as e:
-        return 0, {"error": str(e)}
+        error_data = {"error": str(e)}
+        
+        # Log error
+        a2a_logger.log_communication(
+            msg_type=message_type,
+            direction="inbound",
+            sender="OpenClaw-Gateway",
+            receiver="MCP-Orchestrator",
+            payload=error_data,
+            status="error"
+        )
+        
+        return 0, error_data
 
 def check_health():
     """Check OpenClaw health"""
@@ -137,6 +196,11 @@ status, response = send_a2a_message("STATUS_REQUEST", {"type": "integration"})
 print(f"Status Request: {status}")
 print(f"Response: {json.dumps(response, indent=2)}")
 
+# Step 5: Send Session Summary via Telegram
+print_header("STEP 5: Session Summary via Telegram")
+a2a_logger.send_session_summary()
+print("Session summary sent to Telegram")
+
 # Summary
 print_header("📊 SUMMARY")
 print("""
@@ -144,7 +208,7 @@ A2A Communication Sequence Completed
 
 Commands Sent:
   ✅ cmd-001: enable_a2a_endpoint
-  ✅ cmd-002: prepare_memory_store  
+  ✅ cmd-002: prepare_memory_store
   ✅ cmd-003: prepare_rag_store
   ✅ cmd-004: create_api_credentials
   ✅ cmd-005: enable_audit_logging
@@ -157,6 +221,9 @@ Next Steps:
 
 Orchestrator Status: ACTIVE
 Integration Progress: 20% (Commands sent, awaiting execution)
+
+📱 All communications logged and sent to Telegram in real-time
+📄 Log file: /var/log/openclaw/a2a/a2a_communications.json
 """)
 
 print_header("🎛️  MCP ORCHESTRATOR - SESSION COMPLETE")

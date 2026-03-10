@@ -1,0 +1,13 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+/var/log/
+*.log
+
+# Orchestrator logs
+orchestrator/logs/
+/var/log/openclaw/a2a/
