@@ -203,3 +203,26 @@ Este proyecto sigue [Semantic Versioning](https://semver.org/):
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
+
+## [2026-03-10] - Sprint 0: Infrastructure Setup (Parcial)
+
+### ✅ Completado
+- 0.1.1 - Verificar VPS specs (8 CPU Neoverse-N1, 15GB RAM, 150GB SSD)
+- 0.1.2 - Docker ya instalado (v29.3.0) + Docker Compose (v5.1.0)
+- 0.1.3 - Red Docker configurada (openclaw-net, 172.20.0.0/16)
+- 0.1.4 - Dominios configurados (Tailscale DNS: vpn-ruben-vps-openclaw.tail6c9810.ts.net)
+
+### ⏳ Pendiente
+- 0.2.1 - Crear cuenta LiveKit Cloud (requiere acción manual)
+- 0.2.2 - Obtener API keys (depende de 0.2.1)
+- 0.2.3 - Configurar proyecto LiveKit (depende de 0.2.1)
+
+### 📊 Progreso
+- Sprint 0: 4/10 hitos completados (40%)
+- Total: 4/127 TODOs completados (3%)
+
+### 🔧 Notas Técnicas
+- VPS: Ubuntu 24.04.4 LTS, 8 cores ARM Neoverse-N1
+- Docker: Ya instalado, no requiere acción
+- Red: openclaw-net existe desde 2026-03-10 12:24
+- Dominio: Usando Tailscale DNS por ahora

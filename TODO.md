@@ -14,10 +14,10 @@
 
 ```
 INFRASTRUCTURE SETUP
-[ ] 0.1.1 - Verificar VPS specs (CPU, RAM, disco, bandwidth)
-[ ] 0.1.2 - Instalar Docker + Docker Compose
-[ ] 0.1.3 - Configurar red Docker (openclaw-network)
-[ ] 0.1.4 - Preparar dominios/subdominios (livekit, api, agents)
+[x] 0.1.1 - Verificar VPS specs ✅ (CPU, RAM, disco, bandwidth)
+[x] 0.1.2 - Instalar Docker + Docker Compose ✅
+[x] 0.1.3 - Configurar red Docker ✅ (openclaw-network)
+[x] 0.1.4 - Preparar dominios/subdominios ✅ (livekit, api, agents)
 
 LIVEKIT ACCOUNT
 [ ] 0.2.1 - Crear cuenta en LiveKit Cloud
@@ -321,7 +321,7 @@ DASHBOARD UNIFICADO
 
 | Sprint | TODOs | Completados | Progreso |
 |--------|-------|-------------|----------|
-| Sprint 0 | 10 | 0 | 0% |
+| Sprint 0 | 10 | 4 | 40% |
 | Sprint 1 | 11 | 0 | 0% |
 | Sprint 2 | 11 | 0 | 0% |
 | Sprint 3 | 17 | 0 | 0% |
@@ -331,16 +331,16 @@ DASHBOARD UNIFICADO
 | Sprint 7 | 13 | 0 | 0% |
 | Sprint 8 | 13 | 0 | 0% |
 | Sprint 9 | 13 | 0 | 0% |
-| **TOTAL** | **127** | **0** | **0%** |
+| **TOTAL** | **127** | **4** | **3%** |
 
 ---
 
 ## 🎯 PRÓXIMOS 5 TODOs (INMEDIATOS)
 
-1. `[ ] 0.1.1 - Verificar VPS specs`
-2. `[ ] 0.1.2 - Instalar Docker + Docker Compose`
-3. `[ ] 0.1.3 - Configurar red Docker`
-4. `[ ] 0.1.4 - Preparar dominios/subdominios`
+1. `[x] 0.1.1 - Verificar VPS specs ✅`
+2. `[x] 0.1.2 - Instalar Docker + Docker Compose ✅`
+3. `[x] 0.1.3 - Configurar red Docker ✅`
+4. `[x] 0.1.4 - Preparar dominios/subdominios ✅`
 5. `[ ] 0.2.1 - Crear cuenta en LiveKit Cloud`
 
 ---
@@ -349,7 +349,7 @@ DASHBOARD UNIFICADO
 
 ### Marcar como completado
 ```markdown
-Cambiar: [ ] 0.1.1 - Verificar VPS specs
+Cambiar: [x] 0.1.1 - Verificar VPS specs ✅
 Por:     [x] 0.1.1 - Verificar VPS specs ✅
 ```
 
@@ -365,4 +365,4 @@ git push
 
 **Última actualización:** 2026-03-10  
 **Próxima actualización:** Después de completar primer TODO  
-**Estado:** 0/127 completados (0%)
+**Estado:** 4/127 completados (3%)

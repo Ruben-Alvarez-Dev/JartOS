@@ -76,15 +76,15 @@
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
-| 0.1 Infrastructure Setup | ⏳ Pendiente | 0% |
+| 0.1 Infrastructure Setup | ✅ Completado | 100% |
 | 0.2 LiveKit Account | ⏳ Pendiente | 0% |
 | 0.3 Documentación | ⏳ Pendiente | 0% |
 
 **Checklist Sprint 0:**
-- [ ] 0.1.1 Verificar VPS specs (CPU, RAM, disco, bandwidth)
-- [ ] 0.1.2 Instalar Docker + Docker Compose
-- [ ] 0.1.3 Configurar red Docker (openclaw-network)
-- [ ] 0.1.4 Preparar dominios/subdominios (livekit, api, agents)
+- [x] 0.1.1 Verificar VPS specs ✅ (CPU, RAM, disco, bandwidth)
+- [x] 0.1.2 Instalar Docker + Docker Compose ✅
+- [x] 0.1.3 Configurar red Docker ✅ (openclaw-network)
+- [x] 0.1.4 Preparar dominios/subdominios ✅ (livekit, api, agents)
 - [ ] 0.2.1 Crear cuenta en LiveKit Cloud
 - [ ] 0.2.2 Obtener API keys y guardar
 - [ ] 0.2.3 Configurar proyecto LiveKit (región, límites, SIP)
