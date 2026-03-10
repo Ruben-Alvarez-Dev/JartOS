@@ -70,26 +70,34 @@ SSL/TLS (Oficial LiveKit Docs)
 
 ### SPRINT 2: LIVEKIT AGENTS (Semana 3)
 
-**Estado:** ⏳ Pendiente
+**Estado:** 🟡 En progreso
 
 ```
 AGENTS FRAMEWORK
-[ ] 2.1.1 - Instalar livekit-agents (pip)
-[ ] 2.1.2 - Crear worker básico
-[ ] 2.1.3 - Configurar connection a LiveKit
-[ ] 2.1.4 - Deploy worker
+[x] 2.1.1 - Instalar livekit-agents (pip) ✅ (v1.4.4)
+[x] 2.1.2 - Crear worker básico ✅ (voice_agent_worker.py)
+[ ] 2.1.3 - Configurar connection a LiveKit ⏳ (pendiente: A2A endpoint)
+[ ] 2.1.4 - Deploy worker ⏳ (pendiente: configuración completa)
 
 VOICE AGENT BASE
-[ ] 2.2.1 - Usar template oficial de voice agent
-[ ] 2.2.2 - Configurar STT/TTS (proveedores default)
-[ ] 2.2.3 - Probar conversación básica
-[ ] 2.2.4 - Ajustar latencia
+[ ] 2.2.1 - Usar template oficial de voice agent ⏳
+[ ] 2.2.2 - Configurar STT/TTS (proveedores default) ⏳
+[ ] 2.2.3 - Probar conversación básica ⏳
+[ ] 2.2.4 - Ajustar latencia ⏳
 
-CUSTOM AGENT
-[ ] 2.3.1 - Crear agente personalizado
-[ ] 2.3.2 - Añadir system prompt personalizado
-[ ] 2.3.3 - Integrar con OpenClaw Memory
-[ ] 2.3.4 - Testear conversación completa
+CUSTOM AGENT + OPENCLAW
+[ ] 2.3.1 - Crear agente personalizado ⏳
+[ ] 2.3.2 - Añadir system prompt personalizado ⏳
+[ ] 2.3.3 - Integrar con OpenClaw Memory ⏳ (pendiente: A2A endpoint)
+[ ] 2.3.4 - Integrar con OpenClaw RAG ⏳ (pendiente: A2A endpoint)
+[ ] 2.3.5 - Testear conversación completa ⏳
+
+ORQUESTACIÓN MCP
+[x] 3.1.1 - Instalar MCP ✅
+[x] 3.1.2 - Crear MCP orchestrator ✅
+[x] 3.1.3 - Crear A2A communication script ✅
+[x] 3.1.4 - Enviar comandos a OpenClaw ✅ (5 commands sent)
+[ ] 3.1.5 - OpenClaw A2A endpoint ⏳ (pendiente implementación)
 ```
 
 ---
