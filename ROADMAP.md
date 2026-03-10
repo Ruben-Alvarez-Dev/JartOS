@@ -26,7 +26,7 @@
 ├── MARZO (Q1)
 │   ├── ✅ Semana 1-2: Documentación GitHub
 │   ├── ✅ Semana 3-4: Sprint 0 (Preparación)
-│   └── 🟡 Semana 5-6: Sprint 1 (LiveKit Server)
+│   └── ✅ Semana 5-6: Sprint 1 (LiveKit Server)
 │
 ├── ABRIL (Q2)
 │   ├── 🟡 Semana 7-8: Sprint 2 (Agents)
@@ -97,28 +97,28 @@
 
 #### Sprint 1: LiveKit Server (Semana 2)
 
-**Estado:** ⏳ Pendiente  
+**Estado:** ✅ Completado
 **Duración:** 2026-03-17 a 2026-03-24
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
-| 1.1 Docker Compose | ⏳ Pendiente | 0% |
-| 1.2 LiveKit CLI | ⏳ Pendiente | 0% |
-| 1.3 Web Client Test | ⏳ Pendiente | 0% |
+| 1.1 Docker Compose | ✅ Completado | 100% |
+| 1.2 LiveKit CLI | ✅ Completado | 100% |
+| 1.3 Web Client Test | ✅ Completado | 100% |
 
 **Checklist Sprint 1:**
-- [ ] 1.1.1 Crear docker-compose.yml para LiveKit
-- [ ] 1.1.2 Configurar Redis (requerido)
-- [ ] 1.1.3 Configurar PostgreSQL (opcional)
-- [ ] 1.1.4 Configurar LiveKit server YAML
-- [ ] 1.2.1 Instalar LiveKit CLI
-- [ ] 1.2.2 Autenticar con proyecto
-- [ ] 1.2.3 Crear rooms de test
-- [ ] 1.2.4 Verificar conectividad
-- [ ] 1.3.1 Deploy LiveKit example web client
-- [ ] 1.3.2 Probar conexión desde browser
-- [ ] 1.3.3 Probar audio/video
-- [ ] 1.3.4 Verificar latencia
+- [x] 1.1.1 Crear docker-compose.yml para LiveKit ✅
+- [x] 1.1.2 Configurar Redis (requerido) ✅
+- [x] 1.1.3 Configurar PostgreSQL (opcional) ✅ (no requerido)
+- [x] 1.1.4 Configurar LiveKit server YAML ✅
+- [x] 1.2.1 Instalar LiveKit CLI ✅ (v2.15.0)
+- [x] 1.2.2 Autenticar con proyecto ✅ (config manual)
+- [x] 1.2.3 Crear rooms de test ✅ (openclaw-test-1)
+- [x] 1.2.4 Verificar conectividad ✅
+- [x] 1.3.1 Deploy LiveKit example web client ✅
+- [x] 1.3.2 Probar conexión desde browser ✅
+- [x] 1.3.3 Probar audio/video ✅ (web client con token API)
+- [x] 1.3.4 Verificar latencia ✅
 
 ---
 

@@ -35,26 +35,26 @@ DOCUMENTACIÓN
 
 ### SPRINT 1: LIVEKIT SERVER (Semana 2)
 
-**Estado:** ⏳ Pendiente
+**Estado:** ✅ Completado
 
 ```
 DOCKER COMPOSE
-[ ] 1.1.1 - Crear docker-compose.yml para LiveKit
-[ ] 1.1.2 - Configurar Redis (requerido)
-[ ] 1.1.3 - Configurar PostgreSQL (opcional)
-[ ] 1.1.4 - Configurar LiveKit server YAML
+[x] 1.1.1 - Crear docker-compose.yml para LiveKit ✅
+[x] 1.1.2 - Configurar Redis (requerido) ✅
+[x] 1.1.3 - Configurar PostgreSQL (opcional) ✅ (no requerido)
+[x] 1.1.4 - Configurar LiveKit server YAML ✅
 
 LIVEKIT CLI
-[ ] 1.2.1 - Instalar LiveKit CLI
-[ ] 1.2.2 - Autenticar con proyecto
-[ ] 1.2.3 - Crear rooms de test
-[ ] 1.2.4 - Verificar conectividad
+[x] 1.2.1 - Instalar LiveKit CLI ✅ (v2.15.0)
+[x] 1.2.2 - Autenticar con proyecto ✅ (config manual)
+[x] 1.2.3 - Crear rooms de test ✅ (openclaw-test-1)
+[x] 1.2.4 - Verificar conectividad ✅
 
 WEB CLIENT TEST
-[ ] 1.3.1 - Deploy LiveKit example web client
-[ ] 1.3.2 - Probar conexión desde browser
-[ ] 1.3.3 - Probar audio/video
-[ ] 1.3.4 - Verificar latencia
+[x] 1.3.1 - Deploy LiveKit example web client ✅
+[x] 1.3.2 - Probar conexión desde browser ✅
+[x] 1.3.3 - Probar audio/video ✅ (web client con token API)
+[x] 1.3.4 - Verificar latencia ✅
 ```
 
 ---
