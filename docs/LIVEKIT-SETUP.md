@@ -38,26 +38,31 @@ API_SECRET: YOUR_LIVEKIT_SECRET
 
 ## 🌐 ACCESO
 
-### Subdominios Públicos (wildcard DNS)
+### Desde Tailscale (RECOMENDADO - Todos tus dispositivos)
+
+| Dispositivo | URL | Estado |
+|-------------|-----|--------|
+| **MacBook Pro** | `https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/webclient/` | ✅ Activo |
+| **Mac Mini** | `https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/webclient/` | ✅ Activo |
+| **Xiaomi Pad 5** | `https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/webclient/` | ✅ Activo |
+| **Pixel** | `https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/webclient/` | ✅ Activo |
+| **Samsung S9 FE** | `https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/webclient/` | ✅ Activo |
+
+### Subdominios Públicos (wildcard DNS + UFW permitido)
 
 | Subdominio | URL | Estado |
 |------------|-----|--------|
 | **livekit** | `https://livekit.alvarezconsult.es` | ✅ Activo |
 | **livekit-api** | `https://livekit-api.alvarezconsult.es` | ✅ Activo |
 
-### Tailscale (tailnet only)
-
-| URL | Puerto | Estado |
-|-----|--------|--------|
-| `https://vpn-ruben-vps-openclaw.tail6c9810.ts.net` | 443 | ✅ Activo |
-| `https://100.77.1.100` | 443 | ✅ Activo |
-
 ### Local (VPS)
 
 | URL | Puerto | Estado |
 |-----|--------|--------|
-| `http://localhost:7880` | 7880 | ✅ Activo |
+| `http://localhost:7880` | 7880 | ✅ Activo (LiveKit) |
 | `http://localhost:8443` | 8443 | ✅ Activo (Caddy) |
+| `http://localhost:8444` | 8444 | ✅ Activo (Token API) |
+| `http://localhost:8445` | 8445 | ✅ Activo (Web Client) |
 
 ---
 
