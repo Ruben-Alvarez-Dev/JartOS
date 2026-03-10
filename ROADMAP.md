@@ -1,9 +1,9 @@
 # 📋 OPENCLAW-CITY - ROADMAP MAESTRO
 
-**Fecha:** 2026-03-10  
-**Versión:** 1.0  
-**GitHub:** https://github.com/Ruben-Alvarez-Dev/OPENCLAW-city  
-**Estado:** Fase 1 ✅ Completada, Fase 2 🟡 Planificada
+**Fecha:** 2026-03-10
+**Versión:** 1.1
+**GitHub:** https://github.com/Ruben-Alvarez-Dev/OPENCLAW-city
+**Estado:** Fase 1 ✅ Completada, Fase 2 🟡 Sprint 0 ✅ Completado
 
 ---
 
@@ -25,7 +25,7 @@
 │
 ├── MARZO (Q1)
 │   ├── ✅ Semana 1-2: Documentación GitHub
-│   ├── 🟡 Semana 3-4: Sprint 0 (Preparación)
+│   ├── ✅ Semana 3-4: Sprint 0 (Preparación)
 │   └── 🟡 Semana 5-6: Sprint 1 (LiveKit Server)
 │
 ├── ABRIL (Q2)
@@ -71,27 +71,27 @@
 
 #### Sprint 0: Preparación (Semana 1)
 
-**Estado:** 🟡 En progreso  
+**Estado:** ✅ Completado
 **Duración:** 2026-03-10 a 2026-03-17
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
 | 0.1 Infrastructure Setup | ✅ Completado | 100% |
 | 0.2 LiveKit Self-Hosted | ✅ Completado | 100% |
-| 0.3 Documentación | ⏳ Pendiente | 0% |
+| 0.3 Documentación | ✅ Completado | 100% |
 
 **Checklist Sprint 0:**
 - [x] 0.1.1 Verificar VPS specs ✅ (CPU, RAM, disco, bandwidth)
 - [x] 0.1.2 Instalar Docker + Docker Compose ✅
 - [x] 0.1.3 Configurar red Docker ✅ (openclaw-network)
-- [x] 0.1.4 Preparar dominios/subdominios ✅ (livekit, api, agents)
-- [ ] 0.2.1 Crear cuenta en LiveKit Cloud
-- [ ] 0.2.2 Obtener API keys y guardar
-- [ ] 0.2.3 Configurar proyecto LiveKit (región, límites, SIP)
-- [ ] 0.3.1 Leer LiveKit docs completas
-- [ ] 0.3.2 Estudiar Agents Framework examples
-- [ ] 0.3.3 Revisar SIP integration guide
-- [ ] 0.3.4 Crear checklist de prerequisitos
+- [x] 0.1.4 Preparar dominios/subdominios ✅ (livekit.alvarezconsult.es, livekit-api.alvarezconsult.es)
+- [x] 0.2.1 Configurar LiveKit server (Docker) ✅
+- [x] 0.2.2 Generar API keys locales ✅
+- [x] 0.2.3 Configurar livekit-server.yaml ✅
+- [x] 0.3.1 Leer LiveKit docs completas ✅
+- [x] 0.3.2 Estudiar Agents Framework examples ✅
+- [x] 0.3.3 Revisar SIP integration guide ✅
+- [x] 0.3.4 Crear checklist de prerequisitos ✅
 
 ---
 

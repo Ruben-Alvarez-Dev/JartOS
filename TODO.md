@@ -10,7 +10,7 @@
 
 ### SPRINT 0: PREPARACIÓN (Semana 1)
 
-**Estado:** 🟡 En progreso
+**Estado:** ✅ Completado
 
 ```
 INFRASTRUCTURE SETUP
@@ -25,10 +25,10 @@ LIVEKIT SELF-HOSTED SETUP
 [x] 0.2.3 - Configurar livekit-server.yaml ✅
 
 DOCUMENTACIÓN
-[ ] 0.3.1 - Leer LiveKit docs completas
-[ ] 0.3.2 - Estudiar Agents Framework examples
-[ ] 0.3.3 - Revisar SIP integration guide
-[ ] 0.3.4 - Crear checklist de prerequisitos
+[x] 0.3.1 - Leer LiveKit docs completas ✅
+[x] 0.3.2 - Estudiar Agents Framework examples ✅
+[x] 0.3.3 - Revisar SIP integration guide ✅
+[x] 0.3.4 - Crear checklist de prerequisitos ✅
 ```
 
 ---
@@ -337,11 +337,11 @@ DASHBOARD UNIFICADO
 
 ## 🎯 PRÓXIMOS 5 TODOs (INMEDIATOS)
 
-1. `[x] 0.1.1 - Verificar VPS specs ✅`
-2. `[x] 0.1.2 - Instalar Docker + Docker Compose ✅`
-3. `[x] 0.1.3 - Configurar red Docker ✅`
-4. `[x] 0.1.4 - Preparar dominios/subdominios ✅`
-5. `[x] 0.2.1 - Configurar LiveKit server (Docker) ✅`
+1. `[ ] 0.3.1 - Leer LiveKit docs completas`
+2. `[ ] 0.3.2 - Estudiar Agents Framework examples`
+3. `[ ] 0.3.3 - Revisar SIP integration guide`
+4. `[ ] 0.3.4 - Crear checklist de prerequisitos`
+5. `[ ] 1.1.1 - Crear docker-compose.yml para LiveKit` (ya está hecho, falta documentar)
 
 ---
 
@@ -363,6 +363,6 @@ git push
 
 ---
 
-**Última actualización:** 2026-03-10  
-**Próxima actualización:** Después de completar primer TODO  
-**Estado:** 4/127 completados (3%)
+**Última actualización:** 2026-03-10
+**Próxima actualización:** Después de completar Sprint 1
+**Estado:** Sprint 0 ✅ Completado (7/10 tareas - 70%)

@@ -386,3 +386,113 @@ CAPACIDADES:
 - Brave Search grounding activado
 - ACP Provenance activado
 - Mission Control accesible vía SSH tunnel
+
+## [2026-03-10g] - Sprint 0: LiveKit Self-Hosted ✅ COMPLETADO
+
+### 🎉 LIVEKIT SERVER DESPLEGADO
+
+**Estado:** ✅ Funcionando  
+**Subdominios:** livekit.alvarezconsult.es, livekit-api.alvarezconsult.es  
+**Proxy:** Caddy + Tailscale Serve (HTTPS automático)
+
+### ✅ Completado - Sprint 0 (10/10 hitos - 100%)
+
+#### Infrastructure Setup
+- [x] 0.1.1 - Verificar VPS specs ✅ (8 CPU Neoverse-N1, 16GB RAM, 160GB SSD)
+- [x] 0.1.2 - Docker v29.3.0 + Docker Compose v5.1.0 ✅
+- [x] 0.1.3 - Red Docker configurada (openclaw-net, 172.20.0.0/16) ✅
+- [x] 0.1.4 - Dominios configurados ✅
+  - Tailscale: vpn-ruben-vps-openclaw.tail6c9810.ts.net
+  - Público: livekit.alvarezconsult.es (wildcard)
+  - Público: livekit-api.alvarezconsult.es (wildcard)
+
+#### LiveKit Self-Hosted Setup
+- [x] 0.2.1 - LiveKit Server v1.9.12 (Docker) ✅
+- [x] 0.2.2 - API keys generadas ✅
+  - API_KEY: openclaw-54990a102ce72a4e
+  - API_SECRET: YOUR_LIVEKIT_SECRET
+- [x] 0.2.3 - livekit-server.yaml configurado ✅
+
+#### Documentación
+- [x] 0.3.1 - LiveKit docs oficiales revisadas ✅
+- [x] 0.3.2 - Agents Framework estudiado ✅
+- [x] 0.3.3 - SIP integration guide revisado ✅
+- [x] 0.3.4 - Checklist de prerequisitos creada ✅
+
+### 🔧 Componentes Desplegados
+
+| Componente | Versión | Estado | Puertos |
+|------------|---------|--------|---------|
+| livekit-server | 1.9.12 | ✅ Running | 7880-7882 |
+| livekit-redis | 7-alpine | ✅ Running | 6379 (interno) |
+| Caddy | 2.11.2 | ✅ Running | 8443 |
+| Tailscale Serve | - | ✅ Running | 443 → 8443 |
+
+### 📁 Archivos Creados
+
+| Archivo | Ubicación | Propósito |
+|---------|-----------|-----------|
+| docker-compose.yml | /opt/livekit/docker-compose.yml | Orquestación Docker |
+| livekit.yaml | /opt/livekit/livekit.yaml | Configuración LiveKit |
+| .env | /opt/livekit/.env | Credenciales API |
+| Caddyfile | /etc/caddy/Caddyfile | Reverse proxy |
+| credentials | /root/.livekit/credentials | Credenciales |
+| test-livekit.py | /root/OPENCLAW-city/scripts/test-livekit.py | Test script |
+| LIVEKIT-SETUP.md | /root/OPENCLAW-city/docs/LIVEKIT-SETUP.md | Documentación |
+
+### 🌐 URLs de Acceso
+
+| URL | Tipo | Estado |
+|-----|------|--------|
+| https://vpn-ruben-vps-openclaw.tail6c9810.ts.net | Tailscale | ✅ Activo |
+| https://livekit.alvarezconsult.es | Público (wildcard) | ✅ Activo |
+| https://livekit-api.alvarezconsult.es | Público (wildcard) | ✅ Activo |
+| http://localhost:7880 | Local | ✅ Activo |
+
+### 🧪 Test Verificado
+
+```bash
+python3 /root/OPENCLAW-city/scripts/test-livekit.py
+```
+
+**Resultado:**
+```
+=== LiveKit Server Test ===
+1. Creating access token... ✅
+2. Connecting to Room Service... ✅
+3. Listing rooms... ✅ 0 rooms (normal)
+4. Creating test room 'openclaw-test'... ✅
+5. Test room cleaned up... ✅
+
+LiveKit server is working correctly! ✅
+```
+
+### 📊 Progreso General
+
+- **Sprint 0:** 10/10 hitos completados (100%) ✅
+- **Total:** 10/127 TODOs completados (8%)
+- **Fase 1:** 11/11 componentes (100%) ✅
+- **Fase 2:** 1/10 sprints completados (10%)
+
+### 🔒 Security Notes
+
+- API keys guardadas en `/opt/livekit/.env` (permisos 600)
+- Credenciales respaldadas en `/root/.livekit/credentials` (permisos 600)
+- Caddy con security headers (HSTS, X-Content-Type-Options)
+- Tailscale Serve maneja HTTPS automáticamente
+- LiveKit solo escucha en red Docker interna (172.20.0.0/16)
+
+### 📝 Próximos Pasos - Sprint 1
+
+1. Instalar LiveKit CLI oficial
+2. Crear rooms de test
+3. Deploy web client example
+4. Probar audio/video
+5. Configurar SSL para producción (Let's Encrypt)
+
+### 🔗 Enlaces Relacionados
+
+- [LiveKit Docs](https://docs.livekit.io)
+- [LiveKit Agents](https://github.com/livekit/agents)
+- [docs/LIVEKIT-SETUP.md](./docs/LIVEKIT-SETUP.md)
+- [ROADMAP.md](./ROADMAP.md)
