@@ -11,3 +11,13 @@ __pycache__/
 # Orchestrator logs
 orchestrator/logs/
 /var/log/openclaw/a2a/
+
+# SECRETS - NEVER COMMIT
+.env
+*.env
+secrets/
+credentials/
+*.key
+*.pem
+*_secret*
+*_token*
