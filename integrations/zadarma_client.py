@@ -29,13 +29,24 @@ class ZadarmaClient:
         self.base_url = base_url
         self.session = requests.Session()
         
-    def _get_signature(self, method: str, params: Dict[str, Any]) -> str:
-        """Generate HMAC-SHA1 signature"""
-        params_str = "&".join(f"{k}={v}" for k, v in sorted(params.items()))
-        sign_str = method + params_str + hashlib.md5(params_str.encode()).hexdigest()
+    def _get_signature(self, method: str, params: dict) -> str:
+        """Generate HMAC-SHA1 signature according to Zadarma docs"""
+        # Sort parameters alphabetically
+        sorted_params = sorted(params.items())
+        
+        # Build query string
+        params_list = [f"{k}={v}" for k, v in sorted_params]
+        params_str = "&".join(params_list)
+        
+        # Build signature string: method + params + md5(params)
+        md5_params = hashlib.md5(params_str.encode()).hexdigest()
+        sign_str = method + params_str + md5_params
+        
+        # Generate HMAC-SHA1 signature
         signature = base64.b64encode(
             hmac.new(self.secret.encode(), sign_str.encode(), hashlib.sha1).digest()
         ).decode()
+        
         return f"{self.user_key}:{signature}"
     
     def _request(self, method: str, endpoint: str, params: Optional[Dict] = None, data: Optional[Dict] = None) -> Dict:
