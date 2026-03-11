@@ -98,6 +98,43 @@ ORQUESTACIÓN MCP
 [x] 3.1.3 - Crear A2A communication script ✅
 [x] 3.1.4 - Enviar comandos a OpenClaw ✅ (5 commands sent)
 [ ] 3.1.5 - OpenClaw A2A endpoint ⏳ (pendiente implementación)
+### SPRINT 2: LIVEKIT AGENTS + SIP (Semana 3)
+
+**Estado:** 🟡 70% completado
+
+```
+AGENTS FRAMEWORK
+[x] 2.1.1 - Instalar livekit-agents (pip) ✅ (v1.4.4)
+[x] 2.1.2 - Crear worker básico ✅ (voice_agent_worker.py)
+[x] 2.1.3 - Configurar connection a LiveKit ✅ (ws_url, api_key)
+[x] 2.1.4 - Deploy worker ✅ (voice-agent.service activo)
+
+VOICE AGENT BASE
+[ ] 2.2.1 - Usar template oficial de voice agent ⏳ (API cambió)
+[ ] 2.2.2 - Configurar STT/TTS (proveedores default) ⏳
+[ ] 2.2.3 - Probar conversación básica ⏳
+[ ] 2.2.4 - Ajustar latencia ⏳
+
+CUSTOM AGENT + OPENCLAW
+[x] 2.3.1 - Crear agente personalizado ✅ (voice_agent_worker.py)
+[ ] 2.3.2 - Añadir system prompt personalizado ⏳
+[x] 2.3.3 - Integrar con OpenClaw Memory ⏳ (A2A establecido)
+[ ] 2.3.4 - Integrar con OpenClaw RAG ⏳
+[ ] 2.3.5 - Testear conversación completa ⏳
+
+SIP TRUNKING
+[x] 3.1.1 - Investigar LiveKit SIP API ✅
+[x] 3.1.2 - Crear script de configuración ✅ (configure_livekit_sip.py)
+[ ] 3.1.3 - Configurar SIP Inbound Trunk ⏳ (Redis issue)
+[ ] 3.1.4 - Configurar SIP Dispatch Rule ⏳
+[ ] 3.1.5 - Testear con Zadarma ⏳
+
+A2A COORDINATION
+[x] 4.1.1 - Establecer canal A2A ✅ (localhost:18790)
+[x] 4.1.2 - Enviar comandos a Ramiro ✅ (msg-0013 a msg-0016)
+[x] 4.1.3 - Compartir progreso ✅ (vía A2A endpoint)
+[ ] 4.1.4 - Recibir respuesta de Ramiro ⏳
+```
 ```
 
 ---

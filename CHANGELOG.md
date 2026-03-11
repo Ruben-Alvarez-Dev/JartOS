@@ -746,3 +746,99 @@ curl -sk https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/health
 - [Firewall Setup](https://docs.livekit.io/realtime/self-hosting/firewall/)
 - [docs/LIVEKIT-SETUP.md](./docs/LIVEKIT-SETUP.md)
 - [ROADMAP.md](./ROADMAP.md)
+
+## [2026-03-11] - Sprint 2: Voice Agent + SIP Integration
+
+### 🎤 Voice Agent Deployed
+
+**Estado:** ✅ Funcionando
+
+**Componentes:**
+- livekit-agents v1.4.4 instalado
+- voice_agent_worker.py creado y corregido
+- voice-agent.service activo (systemd)
+
+**Cambios realizados:**
+- API actualizada: `entrypoint` → `entrypoint_fnc`
+- CLI actualizada: `cli.run_app(WorkerOptions(entrypoint_fnc=...))`
+- Systemd: ExecStart incluye comando `start`
+
+**Archivos:**
+- `/root/OPENCLAW-city/orchestrator/voice_agent_worker.py`
+- `/etc/systemd/system/voice-agent.service`
+
+**Estado del servicio:**
+```
+● voice-agent.service - LiveKit Voice Agent Worker
+     Active: active (running)
+     "registered worker", "id": "AW_..."
+```
+
+---
+
+### 📞 LiveKit SIP Trunking
+
+**Estado:** 🟡 En progreso
+
+**Investigación:**
+- LiveKit API SIP encontrada (`livekit.protocol.sip`)
+- Script de configuración creado: `configure_livekit_sip.py`
+- Variables de entorno configuradas: `LIVEKIT_SIP_ENABLED`, `LIVEKIT_SIP_PORT`, etc.
+
+**Problema actual:**
+```
+Error: "sip not connected (redis required)"
+```
+
+**Intentos:**
+1. ✅ Variables de entorno: `LIVEKIT_SIP_*`
+2. ✅ Config YAML: sección `sip:`
+3. ✅ Puertos expuestos: 5060/udp, 5061/tcp
+4. ⏳ Redis connection para SIP (pendiente)
+
+**Archivos creados:**
+- `/root/OPENCLAW-city/orchestrator/configure_livekit_sip.py`
+- `/opt/livekit/docker-compose.yml` (actualizado con SIP)
+
+**Próximos pasos:**
+- Investigar conexión Redis específica para SIP
+- Verificar configuración de LiveKit Server para SIP
+- Testear con Zadarma una vez funcional
+
+---
+
+### 🤖 A2A Coordination
+
+**Estado:** ✅ Establecido
+
+**Canal A2A:**
+- Endpoint: `http://localhost:18790/api/a2a`
+- Formato: JSON con `type`, `orchestrator`, `payload`
+- Logs: `/var/log/openclaw/a2a/a2a_endpoint.log`
+
+**Comandos soportados:**
+- `HANDSHAKE` - Establecer conexión
+- `COMMAND` - Ejecutar acción
+- `STATUS_REQUEST` - Consultar estado
+
+**Mensajes enviados (Qwen-Code → Ramiro):**
+- msg-0013: COMMAND (sync-001, sync-002, sync-003)
+- msg-0014: STATUS_REPORT (voice_agent deployed)
+- msg-0015: COMMAND (sync_deployment_info)
+- msg-0016: COMMAND (sip_status update)
+
+---
+
+### 📊 Progreso Sprint 2
+
+| Componente | Estado | Notas |
+|------------|--------|-------|
+| livekit-agents | ✅ Instalado | v1.4.4 |
+| voice_agent_worker | ✅ Deployado | API corregida |
+| SIP Trunking | 🟡 Investigación | Redis issue |
+| A2A Coordination | ✅ Activo | 4 mensajes enviados |
+| Zadarma Config | ✅ Listo | Esperando SIP |
+
+**Progreso total:** 35/127 TODOs (28%)
+
+---

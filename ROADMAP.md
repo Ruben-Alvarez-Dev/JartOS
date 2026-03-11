@@ -130,7 +130,7 @@
 
 ---
 
-#### Sprint 2: LiveKit Agents (Semana 3)
+#### Sprint 2: Voice Agent + SIP (Semana 3) - 70%
 
 **Estado:** ⏳ Pendiente  
 **Duración:** 2026-03-24 a 2026-03-31
@@ -461,3 +461,25 @@
 **Última actualización:** 2026-03-10  
 **Próxima actualización:** Después de Sprint 0  
 **Estado:** Fase 1 ✅ Completada, Fase 2 🟡 Planificada
+
+---
+
+## 📊 ACTUALIZACIÓN 2026-03-11
+
+### Sprint 2: Voice Agent + SIP (70% completado)
+
+**Completado:**
+- ✅ livekit-agents v1.4.4 instalado
+- ✅ voice_agent_worker.py creado y funcionando
+- ✅ voice-agent.service deployado (systemd)
+- ✅ A2A coordination establecido
+- ✅ SIP API investigada
+- ✅ configure_livekit_sip.py creado
+
+**Pendiente:**
+- ⏳ SIP Trunking funcional (Redis issue)
+- ⏳ Zadarma integration test
+- ⏳ TTS/LLM integration
+
+**Próximo:** Resolver SIP + Redis connection
+
