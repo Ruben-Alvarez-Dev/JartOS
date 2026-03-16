@@ -1,6 +1,17 @@
 # 🏗️ ARQUITECTURA TÉCNICA Y SEGURIDAD
 
-## 1. La Jerarquía de los 12 TIERs (Rutas Reales)
+## 2. Gestión de Secretos (1Password Vault)
+JartOS no almacena secretos en texto plano ni en archivos `.env` locales en producción.
+- **Vault:** Se utiliza **1Password** como gestor de secretos oficial.
+- **Inyección:** Los secretos se inyectan en tiempo de ejecución mediante la CLI de 1Password (`op`).
+- **Plantilla:** `TIER_02_SECURITY/secrets.template.env` define el mapeo entre las variables de entorno y las referencias del Vault.
+
+### Comando de ejecución en producción:
+```bash
+op run --env-file=TIER_02_SECURITY/secrets.template.env -- docker-compose up -d
+```
+
+## 3. La Jerarquía de los 12 TIERs (Rutas Reales)
 El código reside en la raíz de `/Users/ruben/JartOS/`. La ruta antigua `src/` está deprecada.
 - `TIER_00_FOUNDATION/`: Scripts base, variables `.env`.
 - `TIER_01_ACCESS/`: Integraciones de red pura (Zadarma).
