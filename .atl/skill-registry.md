@@ -1,125 +1,32 @@
-# Skill Registry - JartOS
+# Skill Registry
 
-**Generated:** 2025-03-15
-**Project:** JartOS
-**Base:** OPENCLAW-city (cloned from GitHub)
+As your FIRST step before starting any work, identify and load skills relevant to your task from this registry.
 
----
+## User Skills
 
-## Project Context
-
-| Aspect | Value |
-|--------|-------|
-| Language | Python 3.10+ |
-| Framework | LiveKit Agents, MCP (FastMCP), python-telegram-bot |
-| LLM Integration | MiniMax API, Mistral API (embeddings) |
-| Infrastructure | Docker, SQLite, Redis, Tailscale |
-| Deployment | VPS (Ubuntu), systemd services |
-| Architecture | Event-driven, A2A communication, RAG-based memory |
-
----
-
-## Available Skills
-
-### SDD Workflow Skills
-
-| Skill | Path | Trigger |
-|-------|------|---------|
-| sdd-init | ~/.claude/skills/sdd-init/SKILL.md | `/sdd-init` |
-| sdd-explore | ~/.claude/skills/sdd-explore/SKILL.md | `/sdd-explore <topic>` |
-| sdd-propose | ~/.claude/skills/sdd-propose/SKILL.md | `/sdd-propose` |
-| sdd-spec | ~/.claude/skills/sdd-spec/SKILL.md | `/sdd-spec` |
-| sdd-design | ~/.claude/skills/sdd-design/SKILL.md | `/sdd-design` |
-| sdd-tasks | ~/.claude/skills/sdd-tasks/SKILL.md | `/sdd-tasks` |
-| sdd-apply | ~/.claude/skills/sdd-apply/SKILL.md | `/sdd-apply` |
-| sdd-verify | ~/.claude/skills/sdd-verify/SKILL.md | `/sdd-verify` |
-| sdd-archive | ~/.claude/skills/sdd-archive/SKILL.md | `/sdd-archive` |
-
-### Coding Skills
-
-| Skill | Path | Use When |
-|-------|------|----------|
-| react-19 | ~/.claude/skills/react-19/SKILL.md | React 19 features, Server Components |
-| typescript | ~/.claude/skills/typescript/SKILL.md | TypeScript code, strict mode |
-| nextjs-15 | ~/.claude/skills/nextjs-15/SKILL.md | Next.js 15 app router |
-| tailwind-4 | ~/.claude/skills/tailwind-4/SKILL.md | Tailwind CSS styling |
-| django-drf | ~/.claude/skills/django-drf/SKILL.md | Django REST Framework |
-| pytest | ~/.claude/skills/pytest/SKILL.md | Python testing |
-| playwright | ~/.claude/skills/playwright/SKILL.md | E2E testing |
-| ai-sdk-5 | ~/.claude/skills/ai-sdk-5/SKILL.md | Vercel AI SDK |
-
-### Workflow Skills
-
-| Skill | Path | Use When |
-|-------|------|----------|
-| github-pr | ~/.claude/skills/github-pr/SKILL.md | Creating/reviewing PRs |
-| prd | ~/.claude/skills/prd/SKILL.md | Product requirements |
-| jira-task | ~/.claude/skills/jira-task/SKILL.md | Jira task management |
-
----
+| Trigger | Skill | Path |
+|---------|-------|------|
+| When building AI chat features - breaking changes from v4 | ai-sdk-5 | ~/.claude/skills/ai-sdk-5/SKILL.md |
+| When building REST APIs with Django - ViewSets, Serializers, Filters | django-drf | ~/.claude/skills/django-drf/SKILL.md |
+| When creating PRs, writing PR descriptions, or using gh CLI for pull requests | github-pr | ~/.claude/skills/github-pr/SKILL.md |
+| When user asks to create an epic, large feature, or multi-task initiative | jira-epic | ~/.claude/skills/jira-epic/SKILL.md |
+| When user asks to create a Jira task, ticket, or issue | jira-task | ~/.claude/skills/jira-task/SKILL.md |
+| When working with Next.js - routing, Server Actions, data fetching | nextjs-15 | ~/.claude/skills/nextjs-15/SKILL.md |
+| When writing E2E tests - Page Objects, selectors, MCP workflow | playwright | ~/.claude/skills/playwright/SKILL.md |
+| When planning a feature, starting a new project, or when asked to create a PRD | prd | ~/.claude/skills/prd/SKILL.md |
+| When writing Python tests - fixtures, mocking, markers | pytest | ~/.claude/skills/pytest/SKILL.md |
+| When converting PRD to Ralph format - prd.json | ralph | ~/.claude/skills/ralph/SKILL.md |
+| When writing React components - no useMemo/useCallback needed | react-19 | ~/.claude/skills/react-19/SKILL.md |
+| When styling with Tailwind - cn(), theme variables, no var() in className | tailwind-4 | ~/.claude/skills/tailwind-4/SKILL.md |
+| When writing TypeScript code - types, interfaces, generics | typescript | ~/.claude/skills/typescript/SKILL.md |
+| When using Zod for validation - breaking changes from v3 | zod-4 | ~/.claude/skills/zod-4/SKILL.md |
+| When managing React state with Zustand | zustand-5 | ~/.claude/skills/zustand-5/SKILL.md |
+| When user asks to create a new skill, add agent instructions, or document patterns for AI | skill-creator | ~/.claude/skills/skill-creator/SKILL.md |
 
 ## Project Conventions
 
-| File | Purpose |
-|------|---------|
-| CLAUDE.md | Project instructions for Claude |
-| README.md | Project documentation |
-| ROADMAP.md | Implementation roadmap |
-| docs/ | Detailed documentation (18 files) |
+| File | Path | Notes |
+|------|------|-------|
+| SISTEMA_AGENTICO_OPOSICIONES.md | /Users/ruben/JartOS/SISTEMA_AGENTICO_OPOSICIONES.md | Main architecture document |
 
----
-
-## Existing Components (OPENCLAW-city)
-
-| Component | Location | Status |
-|-----------|----------|--------|
-| OpenClaw Gateway | VPS:18789 | Production |
-| Memory Store | SQLite | Production |
-| RAG Store | /opt/openclaw-memory | Production |
-| Email Bridge | /opt/openclaw-email-bridge | Production |
-| Orchestrator Bot | /opt/openclaw-orchestrator | Production |
-| LiveKit Server | Docker | Active |
-| Voice Agent | orchestrator/ | Development |
-| Zadarma Integration | integrations/ | Development |
-| A2A Communication | orchestrator/ | Active |
-
----
-
-## Tech Stack for New Features (Oposiciones)
-
-| Feature | Technology | Priority |
-|---------|------------|----------|
-| Flashcards | Python + SM-2 algorithm | High |
-| Test Generator | RAG + LLM | High |
-| Dashboard Web | FastAPI + Jinja2/React | Medium |
-| Telegram Bot | python-telegram-bot | Medium |
-| PDF/DOCX Ingestion | PyPDF, python-docx | High |
-| Vector Store | SQLite + JSON embeddings | High |
-
----
-
-## Key Dependencies
-
-```python
-# Core
-python-telegram-bot  # Telegram bot
-livekit-agents       # Voice agents
-fastmcp              # MCP server
-httpx                # HTTP client
-requests             # HTTP requests
-
-# LLM/Embeddings
-mistral-api          # Embeddings (1024 dims)
-minimax-api          # LLM primary
-
-# Voice
-livekit-plugins-silero  # STT
-
-# Data
-sqlite3              # Persistence
-redis                # Caching (LiveKit)
-```
-
----
-
-*Registry auto-generated by sdd-init*
+Read the convention files listed above for project-specific patterns and rules. All referenced paths have been extracted - no need to read index files to discover more.

@@ -1,0 +1,6 @@
+2026-03-16 16:02:29,151 [INFO] JartOS Daemon initialized.
+2026-03-16 16:02:29,151 [INFO] EVENT: {"timestamp": "2026-03-16T16:02:29.151840", "event_type": "STARTUP", "agent": "Daemon", "data": {"status": "ok"}}
+2026-03-16 16:02:29,151 [INFO] EVENT: {"timestamp": "2026-03-16T16:02:29.151976", "event_type": "TASK_DELEGATION", "agent": "Maestro", "data": {"task_id": "uuid-123", "specialist": "A-01"}}
+2026-03-16 16:02:29,152 [INFO] EVENT: {"timestamp": "2026-03-16T16:02:29.152015", "event_type": "VALIDATION_SUCCESS", "agent": "Concilio", "data": {"content_id": "doc-456", "votes": "3/3"}}
+2026-03-16 16:02:29,152 [INFO] JartOS Daemon running (demonstration mode)...
+2026-03-16 16:02:34,157 [INFO] JartOS Daemon demonstration finished.

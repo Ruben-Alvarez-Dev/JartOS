@@ -1,0 +1,196 @@
+openapi: 3.1.0
+info:
+  title: JartOS Agentic System API (OpenSpec)
+  description: API for the hierarchical multi-agent system (Maestro, Specialists, Concilio, Daemon) for Opositions and Professional Development.
+  version: 1.0.0
+  contact:
+    name: Ruben Alvarez
+    url: https://github.com/Ruben-Alvarez-Dev/JartOS
+
+servers:
+  - url: http://localhost:18789/api/v1
+    description: Local JartOS Server
+
+paths:
+  /orchestrator/task:
+    post:
+      summary: Submit a task to the Maestro
+      description: The Maestro receives the goal, breaks it down, and delegates it to specialists.
+      operationId: submitTask
+      tags:
+        - Orchestrator
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskRequest'
+      responses:
+        '202':
+          description: Task accepted and processing started.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskResponse'
+        '400':
+          description: Invalid task request.
+
+  /agents/specialists:
+    get:
+      summary: List all active specialist agents
+      description: Returns a list of available specialists (Redactor, Investigador, Coach, etc.)
+      operationId: listSpecialists
+      tags:
+        - Agents
+      responses:
+        '200':
+          description: List of specialists.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Agent'
+
+  /concilio/validate:
+    post:
+      summary: Submit content for quality control (Concilio)
+      description: Validates content against Juridico, Pedagogico, and Tecnico criteria.
+      operationId: validateContent
+      tags:
+        - QualityControl
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ValidationRequest'
+      responses:
+        '200':
+          description: Validation result.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationResponse'
+
+  /knowledge/golden-rag:
+    get:
+      summary: Query the verified knowledge base (Golden RAG)
+      description: Search for content that has been approved by the Concilio.
+      operationId: queryGoldenRAG
+      tags:
+        - Knowledge
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: domain
+          in: query
+          schema:
+            type: string
+            enum: [hosteleria, legislacion, pedagogia]
+      responses:
+        '200':
+          description: Search results from verified sources.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResult'
+
+components:
+  schemas:
+    TaskRequest:
+      type: object
+      required:
+        - goal
+      properties:
+        goal:
+          type: string
+          example: "Generar la Unidad Didactica para el RA1 del ciclo GS Direccion de Servicios de Restauracion."
+        context:
+          type: object
+          description: Optional context data (files, metadata).
+        priority:
+          type: string
+          enum: [low, medium, high, critical]
+          default: medium
+
+    TaskResponse:
+      type: object
+      properties:
+        task_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [pending, running, completed, failed]
+        plan:
+          type: array
+          items:
+            type: string
+          description: The steps defined by the Maestro.
+
+    Agent:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+        status:
+          type: string
+          enum: [idle, busy, offline]
+
+    ValidationRequest:
+      type: object
+      required:
+        - content
+        - type
+      properties:
+        content:
+          type: string
+        type:
+          type: string
+          enum: [programacion, unidad_didactica, temario_propio]
+        metadata:
+          type: object
+
+    ValidationResponse:
+      type: object
+      properties:
+        approved:
+          boolean: true
+        votes:
+          type: object
+          properties:
+            juridico:
+              type: string
+              enum: [apto, no_apto]
+            pedagogico:
+              type: string
+              enum: [apto, no_apto]
+            tecnico:
+              type: string
+              enum: [apto, no_apto]
+        feedback:
+          type: string
+          description: Consolidated feedback if rejected.
+
+    SearchResult:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              content:
+                type: string
+              source:
+                type: string
+              score:
+                type: number
