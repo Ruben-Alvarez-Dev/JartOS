@@ -1,29 +1,193 @@
 # Contexto del Proyecto
 
-**Ultima actualizacion:** 2026-03-16
-**Version:** 1.0.0 (Integrado)
+**Última actualización:** 2026-03-16
+**Versión:** 1.0.0 (Integrado)
 
 ---
 
-## Indice
+## Índice
 
-1. [Origen del Proyecto](#origen-del-proyecto)
-2. [Sistemas Analizados - DATOS REALES](#sistemas-analizados---datos-reales)
-3. [Decision de Fusion (Opcion C)](#decision-de-fusion-opcion-c)
-4. [Objetivo Principal](#objetivo-principal)
-5. [Alcance](#alcance)
+1. [Visión de JartOS](#visión-de-jartos)
+2. [Fusión de Tres Sistemas](#fusión-de-tres-sistemas)
+3. [Filosofía de Extensibilidad](#filosofía-de-extensibilidad)
+4. [Sistemas Analizados - DATOS REALES](#sistemas-analizados---datos-reales)
+5. [Casos de Uso Actuales y Futuros](#casos-de-uso-actuales-y-futuros)
+6. [Objetivo Principal](#objetivo-principal)
+7. [Alcance](#alcance)
 
 ---
 
-## Origen del Proyecto
+## Visión de JartOS
 
-Oposiciones System nace de la fusion de tres sistemas existentes desarrollados por separado:
+**JartOS es un sistema operativo agéntico personal** que integra inteligencia artificial, automatización y productividad de forma extensible a cualquier dominio.
 
-1. **JartOS** - Sistema de automatizacion personal (39GB, 690 archivos .md)
-2. **OPENCLAW-system** - Framework de agentes de IA (GitHub)
-3. **OPENCLAW-city** - Implementacion enterprise con LiveKit (VPS en produccion)
+### ¿Qué significa "Sistema Operativo Agéntico"?
 
-El objetivo es crear un sistema unificado para la preparacion de oposiciones, aprovechando lo mejor de cada sistema.
+Un **sistema operativo agéntico** es una plataforma que:
+1. **Coordina múltiples agentes de IA** que trabajan juntos hacia objetivos
+2. **Mantiene contexto persistente** entre sesiones y dominios
+3. **Automatiza tareas complejas** mediante orquestación de servicios
+4. **Escala horizontalmente** añadiendo nuevos dominios sin cambios al core
+5. **Aprende y se adapta** con el uso del usuario
+
+### Principios Fundamentales
+
+- **Extensibilidad sobre especificidad** - Diseñado para adaptarse, no para ser rígido
+- **Contexto inteligente** - Memoria jerárquica que recuerda lo importante
+- **Coordinación automática** - Agentes que trabajan juntos sin supervisión constante
+- **Dominio-agnostic** - El core no está atado a un caso de uso específico
+
+---
+
+## Fusión de Tres Sistemas
+
+JartOS nace de la fusión estratégica de tres sistemas existentes, cada uno aportando una pieza fundamental:
+
+### 1. JartOS - Estructura y Organización
+- **39 GB de conocimiento estructurado**
+- **690 archivos .md documentados**
+- **Sistema de 15 Tiers** - Organización jerárquica
+- **Sistema de puertos 1XXYY** - Asignación predecible de servicios
+- **CONVENTIONS.md v7.0** - Estándares de código
+
+### 2. OPENCLAW-system - Arquitectura de Agentes
+- **Concilio tri-agente** - Director, Ejecutor, Archivador
+- **6 Catedráticos** - Roles funcionales (CKO, CEngO, COO, etc.)
+- **9 Especialistas** - Agentes especializados con namespaces
+- **Memoria de 4 tipos** - Jerarquía de contexto
+- **Motor de conocimiento en 5 capas** - Procesamiento de información
+
+### 3. OPENCLAW-city - Implementación en Producción
+- **RAG Store funcional** - Búsqueda semántica
+- **Memory Store persistente** - SQLite
+- **Security Pipeline** - Validación de inputs
+- **Ramiro Bot** - Base para interfaz Telegram
+- **LiveKit Server** - Voz en tiempo real
+- **APIs configuradas** - MiniMax M2.5 + Mistral embeddings
+
+### Sinergia de la Fusión
+
+| Sistema | Aporta | Resultado en JartOS |
+|---------|--------|---------------------|
+| **JartOS** | Estructura | Organización escalable de dominios |
+| **OPENCLAW-system** | Agentes | Coordinación inteligente |
+| **OPENCLAW-city** | Producción | Componentes probados y listos |
+
+---
+
+## Filosofía de Extensibilidad
+
+### No es un sistema PARA algo, es un sistema PARA TODO
+
+JartOS no está diseñado como "un sistema de oposiciones" o "un sistema de estudio". Está diseñado como una **plataforma agéntica** que puede adaptarse a cualquier dominio.
+
+### ¿Cómo funciona la extensibilidad?
+
+```
+CORE DE JARTOS (invariante)
+├── Concilio de Agentes
+├── Memoria Jerárquica
+├── Sistema de 15 Tiers
+├── Puertos 1XXYY
+└── Infraestructura común
+
+┌─────────────────────────────────────┐
+│     DOMINIOS (extensibles)          │
+├─────────────────────────────────────┤
+│  DOMINIO ACTUAL 1: Oposiciones     │
+│  - Temario Service                  │
+│  - Flashcards Service               │
+│  - Tests Service                   │
+│  - Analytics Service                │
+├─────────────────────────────────────┤
+│  DOMINIO ACTUAL 2: Desarrollo      │
+│  - Code Review Service             │
+│  - Documentation Service           │
+│  - Testing Service                 │
+├─────────────────────────────────────┤
+│  DOMINIO FUTURO N: Cualquiera       │
+│  - Añadir servicios específicos    │
+│  - Sin tocar el core                │
+└─────────────────────────────────────┘
+```
+
+### Ejemplo de Extensión
+
+Para añadir un nuevo dominio (ej. Gestión Personal):
+
+1. **Crear servicios específicos** en `03-SERVICES/gestion-personal/`
+2. **Definir memoria de dominio** en `02-DATA/gestion-personal.db`
+3. **Registrar en el Concilio** - Los agentes ya saben coordinar
+4. **Añadir interfaz** si es necesario en `06-INTERFACE/`
+
+**El core NO cambia.** Solo se añaden módulos específicos.
+
+---
+
+## Casos de Uso Actuales y Futuros
+
+### Actuales
+
+#### 1. Oposiciones (Civil Service Exams)
+
+El uso principal actual del sistema:
+
+- **Ingestión de temarios** - PDF/DOCX a conocimiento
+- **Búsqueda semántica** - Encontrar conceptos rápidamente
+- **Flashcards SM-2** - Repaso espaciado optimizado
+- **Tests automáticos** - Evaluación con análisis de resultados
+- **Planificación de estudio** - IA que recomienda qué estudiar
+
+**¿Por qué funciona?**
+- El Concilio planifica sesiones de estudio
+- El Ejecutor genera materiales automáticamente
+- El Archivador mantiene progreso y contexto
+- La memoria jerárquica recuerda temas, errores, progreso
+
+#### 2. Desarrollo de Software
+
+Uso secundario actual:
+
+- **Gestión de documentación** - Ingestión de specs, APIs
+- **Búsqueda en código** - Búsqueda semántica de funcionalidad
+- **Tests automáticos** - Generación desde specs
+- **Code review** - Análisis con IA
+
+**¿Por qué funciona?**
+- Mismos agentes, diferente dominio
+- Memoria de dominio para código
+- Servicios específicos de desarrollo
+
+### Futuros (Potenciales)
+
+#### 3. Estudio General
+
+- Preparación de cursos
+- Certificaciones técnicas
+- Aprendizaje de idiomas
+- Formación continua
+
+#### 4. Gestión Personal
+
+- Tareas y proyectos
+- Notas y conocimiento
+- Salud y hábitos
+- Finanzas personales
+
+#### 5. Empresarial
+
+- CRM y gestión de clientes
+- Procesos de negocio
+- Automatización de flujos
+- Dashboard de métricas
+
+#### 6. Cualquier Dominio
+
+La arquitectura permite añadir **cualquier dominio** simplemente:
+1. Definiendo servicios específicos
+2. Creando memoria de dominio
+3. Registrando en el Concilio
+4. Añadiendo interfaz si es necesario
 
 ---
 
@@ -31,16 +195,16 @@ El objetivo es crear un sistema unificado para la preparacion de oposiciones, ap
 
 ### 1. JartOS
 
-**Ubicacion:** `/Volumes/-Documents/ARCHIVOS MAC MINI/JartOS`
+**Ubicación:** `/Volumes/-Documents/ARCHIVOS MAC MINI/JartOS`
 
-**Metricas REALES:**
-- **Tamano:** 39 GB
+**Métricas REALES:**
+- **Tamaño:** 39 GB
 - **Archivos .md:** 690 archivos
 - **Tiers:** 15 niveles (00-FOUNDATION a 14-ARCHIVE)
 
 **Estructura de Tiers:**
 ```
-00-FOUNDATION/     # Configuracion base, CONVENTIONS.md v7.0
+00-FOUNDATION/     # Configuración base, CONVENTIONS.md v7.0
 01-INFRA/          # Docker, redes, puertos
 02-DATA/           # Bases de datos, almacenamiento
 03-SERVICES/       # Microservicios
@@ -49,65 +213,58 @@ El objetivo es crear un sistema unificado para la preparacion de oposiciones, ap
 06-INTERFACE/      # UI, dashboards
 07-INTEGRATION/    # APIs externas
 08-AUTOMATION/     # Scripts automatizados
-09-ANALYTICS/      # Metricas, logs
+09-ANALYTICS/      # Métricas, logs
 10-SECURITY/       # Seguridad
 11-TESTING/        # Tests
-12-DOCS/           # Documentacion
+12-DOCS/           # Documentación
 13-EXPERIMENTAL/   # Prototipos
-14-ARCHIVE/        # Archivo historico
+14-ARCHIVE/        # Archivo histórico
 ```
 
 **Sistema de Puertos 1XXYY:**
 - `1XXYY` donde XX = layer number, YY = service number
 - Ejemplo: Layer 03 (DATA), service 01 = puerto 10301
-- Usado en todos los servicios Docker
 
-**14 Agentes Documentados** en `project/normas/agents/`:
-| Agente | Funcion | Path |
-|--------|---------|------|
-| `architect` | Diseno de arquitectura | `project/normas/agents/architect.md` |
-| `backend` | Desarrollo backend | `project/normas/agents/backend.md` |
-| `frontend` | Desarrollo frontend | `project/normas/agents/frontend.md` |
-| `devops` | Deploy e infra | `project/normas/agents/devops.md` |
-| `qa` | Testing | `project/normas/agents/qa.md` |
-| `security` | Auditoria seguridad | `project/normas/agents/security.md` |
-| `docs` | Documentacion | `project/normas/agents/docs.md` |
-| `data` | Pipelines de datos | `project/normas/agents/data.md` |
-| `ai` | Integracion IA | `project/normas/agents/ai.md` |
-| `integrator` | Integraciones externas | `project/normas/agents/integrator.md` |
-| `monitor` | Monitoreo | `project/normas/agents/monitor.md` |
-| `optimizer` | Performance | `project/normas/agents/optimizer.md` |
-| `researcher` | Investigacion | `project/normas/agents/researcher.md` |
-| `coordinator` | Coordinacion general | `project/normas/agents/coordinator.md` |
+**14 Agentes Documentados:**
+| Agente | Función |
+|--------|---------|
+| `architect` | Diseño de arquitectura |
+| `backend` | Desarrollo backend |
+| `frontend` | Desarrollo frontend |
+| `devops` | Deploy e infra |
+| `qa` | Testing |
+| `security` | Auditoría seguridad |
+| `docs` | Documentación |
+| `data` | Pipelines de datos |
+| `ai` | Integración IA |
+| `integrator` | Integraciones externas |
+| `monitor` | Monitoreo |
+| `optimizer` | Performance |
+| `researcher` | Investigación |
+| `coordinator` | Coordinación general |
 
-**Stack Tecnologico:**
-- Docker Compose para orquestacion
-- Python 3.11+ para servicios
-- Node.js para interfaces
-- Ollama para LLM local
-
-**Que aprovechar:**
+**Qué aprovechar:**
 - Sistema de puertos 1XXYY
-- CONVENTIONS.md v7.0 (estandares de codigo)
+- CONVENTIONS.md v7.0
 - Estructura de 15 Tiers
 - Patrones de agentes documentados
 
-**Que NO usar:**
-- Automatizaciones especificas de MacOS
-- Servicios no relacionados con estudio
+**Qué NO usar:**
+- Automatizaciones específicas de MacOS
+- Servicios no relacionados con el dominio actual
 
 ---
 
 ### 2. OPENCLAW-system
 
-**Ubicacion:** GitHub (repositorio privado)
+**Ubicación:** GitHub (repositorio privado)
 
-**Arquitectura Jerarquica 4 Niveles:**
+**Arquitectura Jerárquica 4 Niveles:**
 ```
 NIVEL 1: Concilio (3 agentes)
     |
     v
-NIVEL 2: Catedra (6 Catedraticos)
+NIVEL 2: Catedra (6 Catedráticos)
     |
     v
 NIVEL 3: Especialistas (9 agentes)
@@ -117,33 +274,33 @@ NIVEL 4: Workers (infraestructura)
 ```
 
 **Concilio Tri-Agente:**
-| Rol | Funcion | Descripcion |
+| Rol | Función | Descripción |
 |-----|---------|-------------|
 | **Director** | Planificar | Define objetivos, asigna tareas, prioriza |
-| **Ejecutor** | Implementar | Ejecuta tareas, genera codigo, prueba |
+| **Ejecutor** | Implementar | Ejecuta tareas, genera código, prueba |
 | **Archivador** | Memorizar | Mantiene contexto, indexa, recupera |
 
-**6 Catedraticos:**
-| Catedratico | Funcion | Namespace |
+**6 Catedráticos:**
+| Catedrático | Función | Namespace |
 |-------------|---------|-----------|
-| **CKO** (Chief Knowledge Officer) | Gestion conocimiento | `cko.*` |
-| **CEngO** (Chief Engineering Officer) | Arquitectura tecnica | `cengo.*` |
-| **COO** (Chief Operations Officer) | Operaciones diarias | `coo.*` |
-| **CHO** (Chief Human Officer) | UX y comunicacion | `cho.*` |
-| **CSRO** (Chief Security Officer) | Seguridad | `csro.*` |
-| **CCO** (Chief Compliance Officer) | Cumplimiento normas | `cco.*` |
+| **CKO** | Gestión conocimiento | `cko.*` |
+| **CEngO** | Arquitectura técnica | `cengo.*` |
+| **COO** | Operaciones diarias | `coo.*` |
+| **CHO** | UX y comunicación | `cho.*` |
+| **CSRO** | Seguridad | `csro.*` |
+| **CCO** | Cumplimiento normas | `cco.*` |
 
-**9 Especialistas con Namespaces:**
-| Especialista | Namespace | Funcion |
+**9 Especialistas:**
+| Especialista | Namespace | Función |
 |--------------|-----------|---------|
-| `analyst` | `analyst.*` | Analisis de datos |
-| `architect` | `architect.*` | Diseno de sistemas |
-| `builder` | `builder.*` | Implementacion |
-| `curator` | `curator.*` | Curacion de contenido |
+| `analyst` | `analyst.*` | Análisis de datos |
+| `architect` | `architect.*` | Diseño de sistemas |
+| `builder` | `builder.*` | Implementación |
+| `curator` | `curator.*` | Curación de contenido |
 | `guardian` | `guardian.*` | Seguridad |
-| `librarian` | `librarian.*` | Gestion documental |
-| `mentor` | `mentor.*` | Ensenanza |
-| `scout` | `scout.*` | Investigacion |
+| `librarian` | `librarian.*` | Gestión documental |
+| `mentor` | `mentor.*` | Enseñanza |
+| `scout` | `scout.*` | Investigación |
 | `validator` | `validator.*` | Testing y QA |
 
 **Sistema de Memoria 4 Tipos:**
@@ -151,42 +308,24 @@ NIVEL 4: Workers (infraestructura)
 |------|---------|-----|
 | **Memoria Agente** | Individual | Contexto personal del agente |
 | **Memoria Unidad** | Equipo | Compartido entre agentes de misma unidad |
-| **Memoria Dominio** | Tematica | Conocimiento de un dominio especifico |
+| **Memoria Dominio** | Temática | Conocimiento de un dominio específico |
 | **Memoria Global** | Sistema | Conocimiento transversal |
 
-**Motor de Conocimiento 5 Capas:**
-1. Raw Data (datos brutos)
-2. Processed (datos procesados)
-3. Indexed (indices y embeddings)
-4. Knowledge (conocimiento estructurado)
-5. Wisdom (insights y patrones)
-
-**Validacion 5 Capas:**
-1. Syntax (sintaxis)
-2. Schema (estructura)
-3. Logic (logica)
-4. Business (reglas de negocio)
-5. Security (seguridad)
-
-**Que aprovechar:**
-- Concilio tri-agente para coordinacion
+**Qué aprovechar:**
+- Concilio tri-agente para coordinación
 - Sistema de memoria de 4 tipos
-- Namespaces para organizacion
+- Namespaces para organización
 - Motor de conocimiento en capas
-
-**Que NO usar:**
-- Integracion de email
-- Telegram bot generico
 
 ---
 
 ### 3. OPENCLAW-city
 
-**Ubicacion:** VPS (produccion) + GitHub
+**Ubicación:** VPS (producción) + GitHub
 
-**Estado:** ACTIVO en produccion
+**Estado:** ACTIVO en producción
 
-**Componentes REALES en Produccion:**
+**Componentes REALES en Producción:**
 
 | Componente | Path | Estado |
 |------------|------|--------|
@@ -203,7 +342,7 @@ NIVEL 4: Workers (infraestructura)
 /search     - Buscar en conocimiento
 /ask        - Pregunta directa a IA
 /status     - Estado del sistema
-/history    - Historial de conversacion
+/history    - Historial de conversación
 /clear      - Limpiar contexto
 /export     - Exportar datos
 ```
@@ -211,95 +350,61 @@ NIVEL 4: Workers (infraestructura)
 **LiveKit Server:**
 - Estado: Activo
 - Uso: Voz en tiempo real
-- Integracion: WebRTC
-
-**Voice Agent Worker:**
-- Servicio de procesamiento de voz
-- Integracion con A2A Protocol
-
-**A2A Protocol:**
-- Agent-to-Agent communication
-- Mensajeria entre agentes
+- Integración: WebRTC
 
 **APIs Configuradas:**
 | API | Uso | Modelo |
 |-----|-----|--------|
-| **MiniMax M2.5** | LLM principal | Generacion de texto |
+| **MiniMax M2.5** | LLM principal | Generación de texto |
 | **Mistral** | Embeddings | 1024 dimensiones |
 
-**Que aprovechar:**
-- `/opt/openclaw-memory/rag_store.py` - RAG funcional
-- `/opt/openclaw-memory/memory_store.py` - Persistencia
-- `/opt/openclaw-memory/security_pipeline.py` - Seguridad
-- `/opt/openclaw-memory/ramiro_bot.py` - Base del bot
+**Qué aprovechar:**
+- RAG Store funcional
+- Memory Store persistente
+- Security Pipeline
+- Ramiro Bot como base
 - MiniMax M2.5 API ya configurada
 - Mistral embeddings (1024 dims)
-
-**Que NO usar:**
-- SIP trunking (fase posterior)
-- VPS completo (desarrollo local primero)
-
----
-
-## Decision de Fusion (Opcion C)
-
-Se selecciono la **Opcion C: Fusion Selectiva** despues de analizar las alternativas:
-
-### Matriz de Componentes Seleccionados
-
-| Componente | Origen | Path Real | Uso en Oposiciones |
-|------------|--------|-----------|-------------------|
-| Memory Store | OPENCLAW-city | `/opt/openclaw-memory/memory_store.py` | Adaptar para flashcards |
-| RAG Store | OPENCLAW-city | `/opt/openclaw-memory/rag_store.py` | Busqueda temario |
-| Security Pipeline | OPENCLAW-city | `/opt/openclaw-memory/security_pipeline.py` | Validacion inputs |
-| Ramiro Bot | OPENCLAW-city | `/opt/openclaw-memory/ramiro_bot.py` | Base Telegram bot |
-| Concilio Tri-Agente | OPENCLAW-system | Arquitectura | Coordinacion modulos |
-| Sistema Memoria 4 Tipos | OPENCLAW-system | Arquitectura | Contexto estudio |
-| Sistema Puertos 1XXYY | JartOS | Arquitectura | Organizacion servicios |
-| 15 Tiers | JartOS | Arquitectura | Estructura carpetas |
-| CONVENTIONS.md v7.0 | JartOS | `00-FOUNDATION/` | Estandares codigo |
-| MiniMax M2.5 API | OPENCLAW-city | Configuracion | Generacion tests/flashcards |
-| Mistral Embeddings | OPENCLAW-city | Configuracion | Busqueda semantica |
 
 ---
 
 ## Objetivo Principal
 
-Crear un **sistema integral de preparacion de oposiciones** que permita:
+Crear un **sistema operativo agéntico personal** que permita:
 
-### Objetivos Primarios
+### Objetivos Principales
 
-1. **Gestionar el temario de forma inteligente**
-   - Ingerir PDFs/DOCX automaticamente
-   - Buscar informacion por semantica (RAG Store)
-   - Mantener contexto entre sesiones (Memory Store 4 tipos)
+1. **Coordinar agentes inteligentemente**
+   - Concilio tri-agente para toma de decisiones
+   - Catedra de especialistas por dominio
+   - Comunicación A2A (Agent-to-Agent)
 
-2. **Optimizar el repaso con SM-2**
-   - Flashcards con repaso espaciado
-   - Generacion automatica desde temario (MiniMax M2.5)
-   - Seguimiento de progreso
+2. **Mantener contexto persistente**
+   - Memoria jerárquica de 4 tipos
+   - Búsqueda en múltiples niveles
+   - Contexto entre sesiones
 
-3. **Evaluar el conocimiento**
-   - Tests automaticos por tema
-   - Diferentes tipos de preguntas
-   - Analisis de resultados
+3. **Automatizar tareas complejas**
+   - Orquestación de servicios
+   - Flujos de trabajo automáticos
+   - Planificación con IA
 
-4. **Proporcionar insights de IA**
-   - Detectar areas debiles
-   - Predecir nivel de preparacion
-   - Recomendar plan de estudio
+4. **Escalar horizontalmente**
+   - Añadir dominios sin cambios al core
+   - Modularidad extensible
+   - Arquitectura de 15 Tiers
 
 ### Objetivos Secundarios
 
-5. **Dashboard web intuitivo**
-   - Vista general del progreso
-   - Gestion de flashcards/tests
-   - Calendario de repaso
+5. **Interfaz intuitiva**
+   - Dashboard web general
+   - CLI potente
+   - Bot Telegram (basado en Ramiro)
 
-6. **Bot Telegram (basado en Ramiro)**
-   - Extender comandos existentes
-   - Flashcards por Telegram
-   - Tests rapidos
+6. **Voz opcional**
+   - LiveKit para voz en tiempo real
+   - Integración con el Concilio
+   - Práctica oral y consultas
 
 ---
 
@@ -307,33 +412,41 @@ Crear un **sistema integral de preparacion de oposiciones** que permita:
 
 ### Incluido (MVP - 6 semanas)
 
-- [x] Ingestion de temario (PDF/DOCX)
-- [x] Busqueda semantica (RAG de OPENCLAW-city)
+- [x] Core del sistema (Concilio, Memoria, Tiers)
+- [x] Ingestión de documentos (PDF/DOCX)
+- [x] Búsqueda semántica (RAG de OPENCLAW-city)
 - [x] Flashcards con SM-2
-- [x] Generador de tests basicos
-- [ ] Dashboard web minimo
-- [ ] Metricas de progreso
-- [ ] Bot Telegram basico (extender Ramiro)
+- [x] Generador de tests básico
+- [ ] Dashboard web mínimo
+- [ ] Métricas de progreso
+- [ ] Bot Telegram básico (extender Ramiro)
 
 ### Fase 2 (4 semanas adicionales)
 
 - [ ] AI analytics completo
 - [ ] Planes de estudio semanales
-- [ ] Prediccion de preparacion
+- [ ] Predicción de preparación
 - [ ] Recomendaciones diarias
-- [ ] Concilio tri-agente para coordinacion
+- [ ] Concilio tri-agente para coordinación
 
 ### Fase 3+ (4 semanas adicionales)
 
 - [ ] Asistente de voz (LiveKit)
-- [ ] Integracion Telegram completa
+- [ ] Integración Telegram completa
 - [ ] Mobile app (opcional)
+
+### Fase 4+ (Extensibilidad)
+
+- [ ] Framework para añadir nuevos dominios
+- [ ] Documentación de extensión
+- [ ] Ejemplos de dominios adicionales
+- [ ] Marketplace de servicios (futuro)
 
 ---
 
 ## Restricciones
 
-### Tecnicas
+### Técnicas
 
 - Python 3.11+ (por typing y performance)
 - SQLite (heredado de OPENCLAW-city)
@@ -343,7 +456,7 @@ Crear un **sistema integral de preparacion de oposiciones** que permita:
 ### Presupuesto
 
 - Mistral API: ~$0.0001/1K tokens (embeddings 1024 dims)
-- MiniMax M2.5 API: ~$0.001/1K tokens (generacion)
+- MiniMax M2.5 API: ~$0.001/1K tokens (generación)
 - Estimado mensual: $5-10 para uso personal
 
 ### Tiempo
@@ -351,6 +464,7 @@ Crear un **sistema integral de preparacion de oposiciones** que permita:
 - MVP: 6 semanas
 - Fase 2: 4 semanas adicionales
 - Fase 3: 4 semanas adicionales
+- Fase 4+: Depende del dominio
 
 ---
 
