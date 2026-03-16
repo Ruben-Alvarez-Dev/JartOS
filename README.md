@@ -1,16 +1,16 @@
-# Oposiciones System
+# JartOS
 
-Sistema integral de preparacion de oposiciones con IA, repaso espaciado y analisis predictivo.
+Sistema operativo personal para productividad, automatizacion y preparacion de oposiciones.
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/Ruben-Alvarez-Dev/oposiciones-system)
-[![Estado](https://img.shields.io/badge/estado-development-yellow)](https://github.com/Ruben-Alvarez-Dev/oposiciones-system)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/Ruben-Alvarez-Dev/JartOS)
+[![Estado](https://img.shields.io/badge/estado-development-yellow)](https://github.com/Ruben-Alvarez-Dev/JartOS)
 [![Licencia](https://img.shields.io/badge/licencia-MIT-green)](LICENSE)
 
 ---
 
 ## Descripcion
 
-**Oposiciones System** es una plataforma completa para la preparacion de oposiciones que integra:
+**JartOS** es un sistema personal que integra:
 
 - **Temario Inteligente** - Ingestion de documentos con chunking semantico y busqueda RAG
 - **Flashcards SM-2** - Repaso espaciado con algoritmo SuperMemo optimizado
