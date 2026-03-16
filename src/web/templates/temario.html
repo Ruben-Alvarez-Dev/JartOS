@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Temario - Oposiciones Study System{% endblock %}
+
+{% block content %}
+<div class="temario-page">
+    <div class="page-header">
+        <h1>Temario</h1>
+    </div>
+
+    <!-- Stats Summary -->
+    <div class="stats-row">
+        <div class="stat">
+            <span class="stat-number">{{ stats.documents }}</span>
+            <span class="stat-text">Documentos</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.chunks }}</span>
+            <span class="stat-text">Chunks</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.embeddings }}</span>
+            <span class="stat-text">Embeddings</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.total_tokens }}</span>
+            <span class="stat-text">Tokens</span>
+        </div>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-section">
+        <h2>Buscar en el Temario</h2>
+        <form action="/temario/search" method="get" class="search-form">
+            <input type="text" name="q" placeholder="Buscar..." class="search-input" required>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+
+    <!-- Documents List -->
+    <div class="section">
+        <h2>Documentos</h2>
+        {% if documents %}
+        <div class="documents-list">
+            {% for doc in documents %}
+            <div class="document-item">
+                <div class="document-info">
+                    <h3><a href="/temario/document/{{ doc.id }}">{{ doc.title or doc.filename }}</a></h3>
+                    <div class="document-meta">
+                        <span class="doc-type">{{ doc.file_type|upper }}</span>
+                        {% if doc.tema %}
+                        <span class="doc-tema">Tema {{ doc.tema }}</span>
+                        {% endif %}
+                        <span class="doc-chunks">{{ doc.total_chunks }} chunks</span>
+                        <span class="doc-pages">{{ doc.total_pages }} páginas</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No hay documentos en el temario.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

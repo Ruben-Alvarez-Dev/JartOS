@@ -77,7 +77,7 @@ Si aplica, añadir screenshots.
 
 **Environment:**
 - OS: [e.g. Ubuntu 22.04]
-- OpenClaw version: [e.g. 2026.3.10]
+- OpenClaw version: [e.g. 2025.3.10]
 - Python version: [e.g. 3.10]
 
 **Logs:**

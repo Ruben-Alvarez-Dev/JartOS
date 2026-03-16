@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{{ document.title or document.filename }} - Temario{% endblock %}
+
+{% block content %}
+<div class="document-page">
+    <div class="page-header">
+        <a href="/temario" class="back-link">← Volver al Temario</a>
+        <h1>{{ document.title or document.filename }}</h1>
+        <div class="document-meta">
+            <span class="doc-type">{{ document.file_type|upper }}</span>
+            {% if document.tema %}
+            <span class="doc-tema">Tema {{ document.tema }}</span>
+            {% endif %}
+            <span class="doc-chunks">{{ document.total_chunks }} chunks</span>
+            <span class="doc-pages">{{ document.total_pages }} páginas</span>
+        </div>
+    </div>
+
+    <!-- Chunks -->
+    <div class="section">
+        <h2>Contenido</h2>
+        {% if chunks %}
+        <div class="chunks-list">
+            {% for chunk in chunks %}
+            <div class="chunk-item">
+                <div class="chunk-header">
+                    <span class="chunk-index">Chunk {{ chunk.chunk_index + 1 }}</span>
+                    {% if chunk.page_number %}
+                    <span class="chunk-page">Página {{ chunk.page_number }}</span>
+                    {% endif %}
+                    <span class="chunk-tokens">{{ chunk.token_count }} tokens</span>
+                </div>
+                {% if chunk.titulo %}
+                <h3 class="chunk-title">{{ chunk.titulo }}</h3>
+                {% endif %}
+                {% if chunk.apartado %}
+                <p class="chunk-apartado">{{ chunk.apartado }}</p>
+                {% endif %}
+                <div class="chunk-content">
+                    {{ chunk.content }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No hay contenido en este documento.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

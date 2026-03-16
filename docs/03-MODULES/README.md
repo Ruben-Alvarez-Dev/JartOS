@@ -1,6 +1,6 @@
 # Modulos del Sistema
 
-Especificaciones detalladas de cada modulo principal de oposiciones-system.
+Especificaciones detalladas de cada modulo principal de JartOS.
 
 ## Modulos
 

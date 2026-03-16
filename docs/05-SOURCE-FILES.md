@@ -1,7 +1,7 @@
 # Archivos Fuente y Configuracion
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -477,14 +477,14 @@ LOG_LEVEL=INFO
 # OPOSICIONES-SYSTEM - Configuracion Principal
 # =============================================================================
 # Version: 0.1.0
-# Ultima actualizacion: 2026-03-16
+# Ultima actualizacion: 2025-03-16
 # =============================================================================
 
 # -----------------------------------------------------------------------------
 # Aplicacion
 # -----------------------------------------------------------------------------
 app:
-  name: "Oposiciones System"
+  name: "JartOS"
   version: "0.1.0"
   environment: "${ENVIRONMENT:development}"
 
@@ -660,7 +660,7 @@ logging:
 
 ```toml
 [project]
-name = "oposiciones-system"
+name = "JartOS"
 version = "0.1.0"
 description = "Sistema integral de preparacion de oposiciones"
 readme = "README.md"
@@ -763,12 +763,12 @@ ignore_missing_imports = true
 
 ```bash
 # =============================================================================
-# SETUP INICIAL - Oposiciones System
+# SETUP INICIAL - JartOS
 # =============================================================================
 
 # 1. Crear directorio del proyecto
-mkdir -p ~/Projects/oposiciones-system
-cd ~/Projects/oposiciones-system
+mkdir -p ~/CLIs/JartOS
+cd ~/CLIs/JartOS
 
 # 2. Inicializar git
 git init
@@ -888,7 +888,7 @@ python -c "import src; print('OK')"
 
 ```bash
 # =============================================================================
-# VERIFICACION - Oposiciones System
+# VERIFICACION - JartOS
 # =============================================================================
 
 # Verificar Python version (>=3.10)

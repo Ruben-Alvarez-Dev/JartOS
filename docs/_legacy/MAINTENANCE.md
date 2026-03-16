@@ -2,8 +2,8 @@
 
 **Mantenimiento y Troubleshooting del Sistema**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -500,7 +500,7 @@ grep -i error /var/log/openclaw/*.log
 journalctl --since "24 hours ago" -u openclaw
 
 # Exportar logs
-journalctl -u openclaw --since "2026-03-01" > /root/openclaw-march.log
+journalctl -u openclaw --since "2025-03-01" > /root/openclaw-march.log
 ```
 
 ### Rotación de Logs

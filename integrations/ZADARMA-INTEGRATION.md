@@ -1,6 +1,6 @@
 # 📞 ZADARMA INTEGRATION - GUÍA COMPLETA
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** ✅ IMPLEMENTADA  
 **Sprint:** 2 - Zadarma + LiveKit + OpenClaw
 
@@ -122,7 +122,7 @@ Servidor Flask que recibe webhooks de Zadarma en puerto **18791**.
   "from": "+34600000000",
   "to": "+34900000000",
   "sip": "1001",
-  "timestamp": "2026-03-10T21:00:00Z"
+  "timestamp": "2025-03-10T21:00:00Z"
 }
 ```
 
@@ -193,15 +193,15 @@ print(f"SMS enviado: {result}")
 ```python
 # Estadísticas de llamadas
 stats = zadarma.get_statistics(
-    date_from="2026-03-01",
-    date_to="2026-03-10"
+    date_from="2025-03-01",
+    date_to="2025-03-10"
 )
 
 # Estadísticas de PBX
 pbx_stats = zadarma.get_pbx_statistics(
     pbx_id="1",
-    date_from="2026-03-01",
-    date_to="2026-03-10"
+    date_from="2025-03-01",
+    date_to="2025-03-10"
 )
 ```
 

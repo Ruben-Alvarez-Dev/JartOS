@@ -1,10 +1,10 @@
 # Documentacion Legacy - OPENCLAW-city
 
-Esta carpeta contiene documentacion del proyecto original **OPENCLAW-city**, del cual **oposiciones-system** deriva parte de su infraestructura.
+Esta carpeta contiene documentacion del proyecto original **OPENCLAW-city**, del cual **JartOS** deriva parte de su infraestructura.
 
 ## Contexto
 
-OPENCLAW-city era un sistema de agentes IA para automatizacion de estudios juridicos. Algunos componentes han sido adaptados para oposiciones-system:
+OPENCLAW-city era un sistema de agentes IA para automatizacion de estudios juridicos. Algunos componentes han sido adaptados para JartOS:
 
 - Sistema de agentes (adaptado a preparacion de oposiciones)
 - Sistema de memoria (adaptado a temarios y flashcards)
@@ -53,4 +53,4 @@ Estos documentos se mantienen como referencia historica y para entender decision
 ---
 
 *Proyecto original: OPENCLAW-city (2024-2025)*
-*Proyecto actual: oposiciones-system (2026)*
+*Proyecto actual: JartOS (2025)*

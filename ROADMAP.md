@@ -1,6 +1,6 @@
 # 📋 OPENCLAW-CITY - ROADMAP MAESTRO
 
-**Fecha:** 2026-03-10
+**Fecha:** 2025-03-10
 **Versión:** 1.1
 **GitHub:** https://github.com/Ruben-Alvarez-Dev/OPENCLAW-city
 **Estado:** Fase 1 ✅ Completada, Fase 2 🟡 Sprint 0 ✅ Completado
@@ -10,7 +10,7 @@
 ## 🎯 ROADMAP VISUAL
 
 ```
-2026
+2025
 │
 ├── FEBRERO (Q1)
 │   └── ✅ FASE 1: OpenClaw Básico
@@ -45,7 +45,7 @@
 
 ---
 
-## 📊 ESTADO ACTUAL (2026-03-10)
+## 📊 ESTADO ACTUAL (2025-03-10)
 
 ### FASE 1: OPENCLAW BÁSICO ✅ COMPLETADA
 
@@ -72,7 +72,7 @@
 #### Sprint 0: Preparación (Semana 1)
 
 **Estado:** ✅ Completado
-**Duración:** 2026-03-10 a 2026-03-17
+**Duración:** 2025-03-10 a 2025-03-17
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -98,7 +98,7 @@
 #### Sprint 1: LiveKit Server (Semana 2)
 
 **Estado:** ✅ Completado
-**Duración:** 2026-03-17 a 2026-03-24
+**Duración:** 2025-03-17 a 2025-03-24
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -121,7 +121,7 @@
 - [x] 1.3.3 Probar audio/video ✅ (web client con token API)
 - [x] 1.3.4 Verificar latencia ✅
 - [x] 1.4.1 Instalar certbot ✅
-- [x] 1.4.2 Obtener certificado Let's Encrypt ✅ (válido hasta 2026-06-08)
+- [x] 1.4.2 Obtener certificado Let's Encrypt ✅ (válido hasta 2025-06-08)
 - [x] 1.4.3 Configurar TLS en LiveKit ✅ (/opt/livekit/certs/)
 - [x] 1.4.4 Configurar TURN server ✅ (puerto 5349 TLS)
 - [x] 1.4.5 Configurar firewall ✅ (443, 7881, 5349, 50000-60000/udp)
@@ -133,7 +133,7 @@
 #### Sprint 2: Voice Agent + SIP (Semana 3) - 70%
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-03-24 a 2026-03-31
+**Duración:** 2025-03-24 a 2025-03-31
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -160,7 +160,7 @@
 #### Sprint 3: TTS Adapter (Semana 4)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-03-31 a 2026-04-07
+**Duración:** 2025-03-31 a 2025-04-07
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -197,7 +197,7 @@
 #### Sprint 4: STT Adapter (Semana 5)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-04-07 a 2026-04-14
+**Duración:** 2025-04-07 a 2025-04-14
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -229,7 +229,7 @@
 #### Sprint 5: LLM Intermediario (Semana 6)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-04-14 a 2026-04-21
+**Duración:** 2025-04-14 a 2025-04-21
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -261,7 +261,7 @@
 #### Sprint 6: SIP Integration (Semana 7)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-04-21 a 2026-04-28
+**Duración:** 2025-04-21 a 2025-04-28
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -293,7 +293,7 @@
 #### Sprint 7: Egress/Ingress (Semana 8)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-04-28 a 2026-05-05
+**Duración:** 2025-04-28 a 2025-05-05
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -325,7 +325,7 @@
 #### Sprint 8: Integración OpenClaw (Semana 9)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-05-05 a 2026-05-12
+**Duración:** 2025-05-05 a 2025-05-12
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -357,7 +357,7 @@
 #### Sprint 9: Testing + Docs (Semana 10)
 
 **Estado:** ⏳ Pendiente  
-**Duración:** 2026-05-12 a 2026-05-19
+**Duración:** 2025-05-12 a 2025-05-19
 
 | Hito | Estado | Progreso |
 |------|--------|----------|
@@ -458,13 +458,13 @@
 
 ---
 
-**Última actualización:** 2026-03-10  
+**Última actualización:** 2025-03-10  
 **Próxima actualización:** Después de Sprint 0  
 **Estado:** Fase 1 ✅ Completada, Fase 2 🟡 Planificada
 
 ---
 
-## 📊 ACTUALIZACIÓN 2026-03-11
+## 📊 ACTUALIZACIÓN 2025-03-11
 
 ### Sprint 2: Voice Agent + SIP (70% completado)
 

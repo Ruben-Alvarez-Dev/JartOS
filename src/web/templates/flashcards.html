@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Flashcards - Oposiciones Study System{% endblock %}
+
+{% block content %}
+<div class="flashcards-page">
+    <div class="page-header">
+        <h1>Flashcards</h1>
+        <button class="btn btn-primary" onclick="showCreateDeckModal()">Nuevo Mazo</button>
+    </div>
+
+    <!-- Stats Summary -->
+    <div class="stats-row">
+        <div class="stat">
+            <span class="stat-number">{{ stats.total_decks }}</span>
+            <span class="stat-text">Mazos</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.total_cards }}</span>
+            <span class="stat-text">Tarjetas</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.cards_due_today }}</span>
+            <span class="stat-text">Pendientes Hoy</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.total_reviews }}</span>
+            <span class="stat-text">Reviews Totales</span>
+        </div>
+    </div>
+
+    <!-- Decks Grid -->
+    <div class="decks-grid">
+        {% for deck in decks %}
+        <div class="deck-card">
+            <div class="deck-header">
+                <h3>{{ deck.name }}</h3>
+                <span class="deck-count">{{ deck.card_count }} tarjetas</span>
+            </div>
+            <p class="deck-description">{{ deck.description or "Sin descripción" }}</p>
+
+            {% if deck_stats[loop.index0] %}
+            <div class="deck-stats">
+                <span class="badge new">{{ deck_stats[loop.index0].new_cards }} nuevas</span>
+                <span class="badge due">{{ deck_stats[loop.index0].due_cards }} pendientes</span>
+            </div>
+            {% endif %}
+
+            <div class="deck-actions">
+                <a href="/flashcards/review/{{ deck.id }}" class="btn btn-primary">Repasar</a>
+                <a href="/flashcards/deck/{{ deck.id }}" class="btn btn-secondary">Ver Detalles</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <h3>No hay mazos creados</h3>
+            <p>Crea tu primer mazo de flashcards para comenzar a estudiar.</p>
+            <button class="btn btn-primary" onclick="showCreateDeckModal()">Crear Mazo</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Create Deck Modal -->
+<div id="createDeckModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Crear Nuevo Mazo</h2>
+        <form id="createDeckForm">
+            <div class="form-group">
+                <label for="deckName">Nombre del Mazo</label>
+                <input type="text" id="deckName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="deckDescription">Descripción</label>
+                <textarea id="deckDescription" name="description"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="hideCreateDeckModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function showCreateDeckModal() {
+        document.getElementById('createDeckModal').style.display = 'flex';
+    }
+
+    function hideCreateDeckModal() {
+        document.getElementById('createDeckModal').style.display = 'none';
+    }
+
+    document.getElementById('createDeckForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        try {
+            const response = await fetch('/api/flashcards/decks', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                window.location.reload();
+            }
+        } catch (error) {
+            console.error('Error creating deck:', error);
+        }
+    });
+</script>
+{% endblock %}

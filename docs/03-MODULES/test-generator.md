@@ -1,7 +1,7 @@
 # Modulo: Test Generator
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -206,7 +206,7 @@ Genera un nuevo test.
       ]
     }
   ],
-  "created_at": "2026-03-16T10:00:00"
+  "created_at": "2025-03-16T10:00:00"
 }
 ```
 
@@ -223,7 +223,7 @@ Inicia una sesion de test.
   "test_id": "test_abc123",
   "status": "in_progress",
   "current_question_index": 0,
-  "started_at": "2026-03-16T10:05:00",
+  "started_at": "2025-03-16T10:05:00",
   "time_limit_minutes": null
 }
 ```
@@ -276,7 +276,7 @@ Completa la sesion de test.
   "session_id": "sess_xyz789",
   "test_id": "test_abc123",
   "status": "completed",
-  "completed_at": "2026-03-16T10:35:00",
+  "completed_at": "2025-03-16T10:35:00",
   "result": {
     "total_questions": 10,
     "correct_answers": 8,
@@ -346,7 +346,7 @@ Obtiene historial de tests.
       "session_id": "sess_xyz789",
       "test_title": "Test Tema 1 - Constitucion",
       "score_percentage": 80.0,
-      "completed_at": "2026-03-16T10:35:00",
+      "completed_at": "2025-03-16T10:35:00",
       "time_spent_seconds": 1800
     }
   ],

@@ -1,6 +1,6 @@
 # 🚨 SECURITY INCIDENT - DAMAGE CONTROL
 
-**Date:** 2026-03-11  
+**Date:** 2025-03-11  
 **Severity:** CRITICAL  
 **Status:** ⚠️ KEYS CANNOT BE REVOKED
 
@@ -175,14 +175,14 @@ fi
 
 | Time | Event |
 |------|-------|
-| 2026-03-11 ~04:00 | API keys committed to GitHub |
-| 2026-03-11 ~04:30 | GitGuardian alert received |
-| 2026-03-11 ~04:31 | Secrets moved to secure location |
-| 2026-03-11 ~04:32 | OpenClaw Gateway token changed |
-| 2026-03-11 ~04:33 | .gitignore updated |
-| 2026-03-11 ~04:34 | This document created |
+| 2025-03-11 ~04:00 | API keys committed to GitHub |
+| 2025-03-11 ~04:30 | GitGuardian alert received |
+| 2025-03-11 ~04:31 | Secrets moved to secure location |
+| 2025-03-11 ~04:32 | OpenClaw Gateway token changed |
+| 2025-03-11 ~04:33 | .gitignore updated |
+| 2025-03-11 ~04:34 | This document created |
 
 ---
 
 **Status:** ONGOING MONITORING  
-**Next Review:** 2026-03-12 (24 hours)
+**Next Review:** 2025-03-12 (24 hours)

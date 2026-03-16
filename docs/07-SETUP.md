@@ -1,7 +1,7 @@
 # Guia de Instalacion
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -156,10 +156,10 @@ sudo apt install -y python3.11 python3.11-venv python3-pip git
 cd ~/Projects  # o ~/Documents, o donde prefieras
 
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/oposiciones-system.git
+git clone https://github.com/Ruben-Alvarez-Dev/JartOS.git
 
 # Entrar al directorio
-cd oposiciones-system
+cd JartOS
 
 # Verificar contenido
 ls -la
@@ -523,7 +523,7 @@ python --version > /dev/null 2>&1
 check "Python instalado"
 
 # Virtual environment
-echo $VIRTUAL_ENV | grep -q "oposiciones-system"
+echo $VIRTUAL_ENV | grep -q "JartOS"
 check "Virtual environment activo"
 
 # Dependencias Python
@@ -770,7 +770,7 @@ pytest -v -m "not integration"
 
 ```dockerfile
 # =============================================================================
-# Dockerfile - Oposiciones System
+# Dockerfile - JartOS
 # =============================================================================
 
 FROM python:3.11-slim
@@ -813,7 +813,7 @@ CMD ["python", "scripts/run_web.py"]
 
 ```yaml
 # =============================================================================
-# docker-compose.yml - Oposiciones System
+# docker-compose.yml - JartOS
 # =============================================================================
 
 version: '3.8'
@@ -844,7 +844,7 @@ services:
 # =============================================================================
 
 # Construir imagen
-docker build -t oposiciones-system .
+docker build -t JartOS .
 
 # Iniciar con docker-compose
 docker-compose up -d

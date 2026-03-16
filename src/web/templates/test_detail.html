@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}{{ test.title }} - Tests{% endblock %}
+
+{% block content %}
+<div class="test-detail-page">
+    <div class="page-header">
+        <a href="/tests" class="back-link">← Volver a Tests</a>
+        <h1>{{ test.title }}</h1>
+        <p class="test-description">{{ test.description }}</p>
+    </div>
+
+    <!-- Test Info -->
+    <div class="test-info-card">
+        <h2>Información del Test</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="label">Preguntas:</span>
+                <span class="value">{{ test.question_count }}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Dificultad:</span>
+                <span class="value">{{ test.config.difficulty }}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Modo:</span>
+                <span class="value">{{ test.config.mode }}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Creado:</span>
+                <span class="value">{{ test.created_at.strftime('%d/%m/%Y %H:%M') }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions List -->
+    <div class="section">
+        <h2>Preguntas</h2>
+        {% if test.questions %}
+        <div class="questions-list">
+            {% for question in test.questions %}
+            <div class="question-item">
+                <div class="question-number">P{{ loop.index }}</div>
+                <div class="question-content">
+                    <p class="question-text">{{ question.text }}</p>
+                    {% if question.options %}
+                    <ul class="options-list">
+                        {% for option in question.options %}
+                        <li class="{% if loop.index0 == question.correct_index %}correct{% endif %}">
+                            {{ option }}
+                            {% if loop.index0 == question.correct_index %}✓{% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if question.explanation %}
+                    <p class="explanation"><strong>Explicación:</strong> {{ question.explanation }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="empty-state">No hay preguntas en este test.</p>
+        {% endif %}
+    </div>
+
+    <!-- Sessions -->
+    {% if sessions %}
+    <div class="section">
+        <h2>Sesiones</h2>
+        <div class="sessions-list">
+            {% for session in sessions %}
+            <div class="session-item">
+                <span class="session-status">{{ session.status }}</span>
+                <span class="session-date">{{ session.started_at.strftime('%d/%m/%Y %H:%M') }}</span>
+                <span class="session-answers">{{ session.answers|length }} respuestas</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Results -->
+    {% if results %}
+    <div class="section">
+        <h2>Resultados</h2>
+        <div class="results-list">
+            {% for result in results %}
+            <div class="result-item {% if result.passed %}passed{% else %}failed{% endif %}">
+                <a href="/tests/result/{{ result.session_id }}">
+                    <span class="result-score">{{ result.score_percentage|round(1) }}%</span>
+                    <span class="result-details">{{ result.correct_answers }}/{{ result.total_questions }}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

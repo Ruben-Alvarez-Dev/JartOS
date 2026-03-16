@@ -2,8 +2,8 @@
 
 **Logging y Auditoría del Sistema**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -106,7 +106,7 @@ CREATE TABLE security_logs (
 
 ```json
 {
-  "timestamp": "2026-03-10T15:30:00Z",
+  "timestamp": "2025-03-10T15:30:00Z",
   "event_type": "UNAUTHORIZED_ACCESS",
   "severity": "warn",
   "user_id": "telegram:999999999",
@@ -123,7 +123,7 @@ CREATE TABLE security_logs (
 
 ```json
 {
-  "timestamp": "2026-03-10T14:45:00Z",
+  "timestamp": "2025-03-10T14:45:00Z",
   "event_type": "MISTRAL_API_ERROR",
   "severity": "error",
   "details": {
@@ -131,7 +131,7 @@ CREATE TABLE security_logs (
     "response": "Rate limit exceeded"
   },
   "resolved": true,
-  "resolved_at": "2026-03-10T14:46:00Z"
+  "resolved_at": "2025-03-10T14:46:00Z"
 }
 ```
 
@@ -139,7 +139,7 @@ CREATE TABLE security_logs (
 
 ```json
 {
-  "timestamp": "2026-03-10T15:00:00Z",
+  "timestamp": "2025-03-10T15:00:00Z",
   "event_type": "SECURITY_CHECK",
   "severity": "info",
   "details": {
@@ -160,9 +160,9 @@ openclaw-dashboard <<< "security 20"
 # Output:
 # 🔒 LOGS DE SEGURIDAD (últimos 20)
 # ============================================================
-# ✅ 2026-03-10 15:30:00 ℹ️ SECURITY_CHECK
-# ✅ 2026-03-10 14:30:00 ℹ️ SECURITY_CHECK
-# ⏳ 2026-03-10 13:15:00 ⚠️ UNAUTHORIZED_ACCESS
+# ✅ 2025-03-10 15:30:00 ℹ️ SECURITY_CHECK
+# ✅ 2025-03-10 14:30:00 ℹ️ SECURITY_CHECK
+# ⏳ 2025-03-10 13:15:00 ⚠️ UNAUTHORIZED_ACCESS
 # ...
 ```
 

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Oposiciones Study System{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h1>Dashboard</h1>
+
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Temario</h3>
+            <div class="stat-value">{{ temario_stats.documents }}</div>
+            <div class="stat-label">Documentos</div>
+            <div class="stat-detail">{{ temario_stats.chunks }} chunks | {{ temario_stats.total_tokens }} tokens</div>
+        </div>
+
+        <div class="stat-card">
+            <h3>Flashcards</h3>
+            <div class="stat-value">{{ flashcard_stats.total_cards }}</div>
+            <div class="stat-label">Tarjetas</div>
+            <div class="stat-detail">{{ flashcard_stats.total_decks }} decks | {{ flashcard_stats.cards_due_today }} pendientes</div>
+        </div>
+
+        <div class="stat-card">
+            <h3>Tests</h3>
+            <div class="stat-value">{{ test_count }}</div>
+            <div class="stat-label">Tests Creados</div>
+            <div class="stat-detail">{{ session_count }} sesiones completadas</div>
+        </div>
+
+        <div class="stat-card">
+            <h3>Reviews</h3>
+            <div class="stat-value">{{ flashcard_stats.total_reviews }}</div>
+            <div class="stat-label">Total Reviews</div>
+            <div class="stat-detail">Factor medio: {{ flashcard_stats.average_ease_factor }}</div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="charts-section">
+        <div class="chart-container">
+            <h2>Progreso de Estudio</h2>
+            <canvas id="progressChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Quick Access -->
+    <div class="quick-access">
+        <div class="section">
+            <h2>Mazos de Flashcards</h2>
+            {% if decks %}
+            <div class="deck-list">
+                {% for deck in decks %}
+                <div class="deck-item">
+                    <a href="/flashcards/deck/{{ deck.id }}">
+                        <span class="deck-name">{{ deck.name }}</span>
+                        <span class="deck-count">{{ deck.card_count }} tarjetas</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="empty-state">No hay mazos creados. <a href="/flashcards">Crear mazo</a></p>
+            {% endif %}
+        </div>
+
+        <div class="section">
+            <h2>Tests Recientes</h2>
+            {% if recent_tests %}
+            <div class="test-list">
+                {% for test in recent_tests %}
+                <div class="test-item">
+                    <a href="/tests/{{ test.id }}">
+                        <span class="test-title">{{ test.title }}</span>
+                        <span class="test-date">{{ test.created_at.strftime('%d/%m/%Y') }}</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="empty-state">No hay tests creados.</p>
+            {% endif %}
+        </div>
+
+        <div class="section">
+            <h2>Resultados Recientes</h2>
+            {% if recent_results %}
+            <div class="result-list">
+                {% for result in recent_results %}
+                <div class="result-item {% if result.passed %}passed{% else %}failed{% endif %}">
+                    <a href="/tests/result/{{ result.session_id }}">
+                        <span class="result-score">{{ result.score_percentage|round(1) }}%</span>
+                        <span class="result-details">{{ result.correct_answers }}/{{ result.total_questions }}</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="empty-state">No hay resultados de tests.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Progress Chart
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    const progressChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Aprendidas', 'Nuevas', 'Pendientes'],
+            datasets: [{
+                data: [
+                    {{ flashcard_stats.total_cards - flashcard_stats.cards_due_today }},
+                    {{ flashcard_stats.cards_due_today }},
+                    0
+                ],
+                backgroundColor: [
+                    '#4CAF50',
+                    '#FF9800',
+                    '#2196F3'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

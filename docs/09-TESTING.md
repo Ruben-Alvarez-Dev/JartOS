@@ -1,7 +1,7 @@
 # Estrategia de Testing
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 

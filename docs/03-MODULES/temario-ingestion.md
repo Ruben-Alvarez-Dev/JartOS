@@ -1,7 +1,7 @@
 # Modulo: Temario Ingestion
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -196,7 +196,7 @@ title: "Tema 1 - La Constitucion"  # Optional: titulo personalizado
     "tema": 1,
     "total_pages": 45,
     "total_chunks": 87,
-    "created_at": "2026-03-16T10:30:00"
+    "created_at": "2025-03-16T10:30:00"
   },
   "chunks_created": 87,
   "embeddings_created": 87,
@@ -243,7 +243,7 @@ GET /api/temario/documents?tema=1 HTTP/1.1
       "tema": 1,
       "total_pages": 45,
       "total_chunks": 87,
-      "created_at": "2026-03-16T10:30:00"
+      "created_at": "2025-03-16T10:30:00"
     }
   ]
 }
@@ -266,7 +266,7 @@ Obtiene detalles de un documento especifico.
   "tema": 1,
   "total_pages": 45,
   "total_chunks": 87,
-  "created_at": "2026-03-16T10:30:00",
+  "created_at": "2025-03-16T10:30:00",
   "metadata": {
     "author": "Centro de Estudios",
     "created": "2025-01-15"
@@ -348,7 +348,7 @@ Content-Type: application/json
     }
   ],
   "confidence": 0.85,
-  "generated_at": "2026-03-16T10:35:00"
+  "generated_at": "2025-03-16T10:35:00"
 }
 ```
 

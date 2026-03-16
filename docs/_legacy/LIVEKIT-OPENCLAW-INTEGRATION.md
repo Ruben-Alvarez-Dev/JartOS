@@ -1,6 +1,6 @@
 # 🤝 LIVEKIT + OPENCLAW - INTEGRACIÓN
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** 🟡 En progreso (Sprint 2)  
 **Documentación Oficial:** Basada en [LiveKit Agents](https://docs.livekit.io/agents/) y [OpenClaw API](./docs/OPENCLAW-GATEWAY.md)
 
@@ -68,7 +68,7 @@ Este documento describe la integración entre **LiveKit** (voz/video en tiempo r
 | **Server** | ✅ Running | `wss://vpn-ruben-vps-openclaw.tail6c9810.ts.net` |
 | **API** | ✅ Running | `https://livekit.alvarezconsult.es` |
 | **TURN** | ✅ Configurado | Puerto 5349 TLS |
-| **SSL/TLS** | ✅ Let's Encrypt | Válido hasta 2026-06-08 |
+| **SSL/TLS** | ✅ Let's Encrypt | Válido hasta 2025-06-08 |
 
 ### 2. OpenClaw Gateway
 
@@ -377,6 +377,6 @@ journalctl -t livekit-agents -t openclaw -f
 
 ---
 
-**Última actualización:** 2026-03-10  
+**Última actualización:** 2025-03-10  
 **Próxima actualización:** Después de Sprint 2  
 **Estado:** 🟡 En progreso (Sprint 2)

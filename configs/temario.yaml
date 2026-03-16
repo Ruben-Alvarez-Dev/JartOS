@@ -1,0 +1,68 @@
+# Temario Ingestion Configuration
+# Copy to temario.local.yaml and customize
+
+# Database settings
+database:
+  path: "data/temario.db"
+  # SQLite database for storing chunks and embeddings
+
+# Embedding settings
+embeddings:
+  provider: "mistral"
+  model: "mistral-embed"
+  dimensions: 1024
+  batch_size: 50
+  # Mistral API configuration
+  api_key_env: "MISTRAL_API_KEY"
+
+# LLM settings for QA
+llm:
+  provider: "minimax"
+  model: "MiniMax-Text-01"
+  api_key_env: "MINIMAX_API_KEY"
+  group_id_env: "MINIMAX_GROUP_ID"
+  temperature: 0.1
+  max_tokens: 2048
+
+# Chunking settings
+chunking:
+  target_tokens: 500
+  max_tokens: 700
+  min_tokens: 100
+  overlap_sentences: 2
+  # Tiktoken encoding for token counting
+  encoding: "cl100k_base"
+
+# Parser settings
+parser:
+  pdf:
+    extract_images: false
+    extract_tables: true
+  docx:
+    extract_styles: true
+  # Metadata extraction patterns
+  metadata_patterns:
+    tema: "(?i)tema\\s*(\\d+)"
+    titulo: "(?i)t[ií]tulo[:\\s]+(.+)"
+    apartado: "(?i)apartado\\s*(\\d+)"
+
+# Search settings
+search:
+  default_limit: 5
+  similarity_threshold: 0.7
+  # Weights for hybrid search
+  weights:
+    semantic: 0.8
+    keyword: 0.2
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/temario.log"
+
+# Paths
+paths:
+  documents: "documents/temario"
+  cache: "cache/temario"
+  logs: "logs"

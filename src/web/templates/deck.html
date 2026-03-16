@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}{{ deck.name }} - Flashcards{% endblock %}
+
+{% block content %}
+<div class="deck-page">
+    <div class="page-header">
+        <a href="/flashcards" class="back-link">← Volver a Flashcards</a>
+        <h1>{{ deck.name }}</h1>
+        <p class="deck-description">{{ deck.description }}</p>
+    </div>
+
+    <!-- Deck Stats -->
+    {% if stats %}
+    <div class="stats-row">
+        <div class="stat">
+            <span class="stat-number">{{ stats.total_cards }}</span>
+            <span class="stat-text">Total</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.new_cards }}</span>
+            <span class="stat-text">Nuevas</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ due_count }}</span>
+            <span class="stat-text">Pendientes</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">{{ stats.learned_cards }}</span>
+            <span class="stat-text">Aprendidas</span>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Actions -->
+    <div class="deck-actions-bar">
+        {% if due_count > 0 %}
+        <a href="/flashcards/review/{{ deck.id }}?mode=due" class="btn btn-primary">Repasar Pendientes ({{ due_count }})</a>
+        {% endif %}
+        {% if new_count > 0 %}
+        <a href="/flashcards/review/{{ deck.id }}?mode=new" class="btn btn-secondary">Repasar Nuevas ({{ new_count }})</a>
+        {% endif %}
+        <button class="btn btn-outline" onclick="showAddCardModal()">Añadir Tarjeta</button>
+    </div>
+
+    <!-- Cards List -->
+    <div class="cards-section">
+        <h2>Tarjetas ({{ cards|length }})</h2>
+
+        {% if cards %}
+        <div class="cards-list">
+            {% for card in cards %}
+            <div class="card-item">
+                <div class="card-front">
+                    <strong>Frente:</strong> {{ card.front[:100] }}{% if card.front|length > 100 %}...{% endif %}
+                </div>
+                <div class="card-back">
+                    <strong>Reverso:</strong> {{ card.back[:100] }}{% if card.back|length > 100 %}...{% endif %}
+                </div>
+                <div class="card-meta">
+                    {% if card.is_new %}
+                    <span class="badge new">Nueva</span>
+                    {% elif card.is_due %}
+                    <span class="badge due">Pendiente</span>
+                    {% else %}
+                    <span class="badge learned">Próxima: {{ card.next_review }}</span>
+                    {% endif %}
+                    <span class="card-ease">EF: {{ card.ease_factor }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No hay tarjetas en este mazo.</p>
+            <button class="btn btn-primary" onclick="showAddCardModal()">Añadir Primera Tarjeta</button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Add Card Modal -->
+<div id="addCardModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Añadir Nueva Tarjeta</h2>
+        <form id="addCardForm">
+            <input type="hidden" name="deck_id" value="{{ deck.id }}">
+            <div class="form-group">
+                <label for="cardFront">Frente</label>
+                <textarea id="cardFront" name="front" required rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="cardBack">Reverso</label>
+                <textarea id="cardBack" name="back" required rows="3"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="hideAddCardModal()">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Añadir</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function showAddCardModal() {
+        document.getElementById('addCardModal').style.display = 'flex';
+    }
+
+    function hideAddCardModal() {
+        document.getElementById('addCardModal').style.display = 'none';
+    }
+
+    document.getElementById('addCardForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        try {
+            const response = await fetch('/api/flashcards/cards', {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                window.location.reload();
+            }
+        } catch (error) {
+            console.error('Error adding card:', error);
+        }
+    });
+</script>
+{% endblock %}

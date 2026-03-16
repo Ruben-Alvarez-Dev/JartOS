@@ -186,5 +186,5 @@ JartOS nace de la fusión estratégica de tres sistemas:
 
 ---
 
-*Última actualización: Marzo 2026*
+*Última actualización: Marzo 2025*
 *Versión: 1.0.0 - Sistema Operativo Agéntico*

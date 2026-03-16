@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Repasar {{ deck.name }} - Flashcards{% endblock %}
+
+{% block content %}
+<div class="review-page">
+    <div class="page-header">
+        <a href="/flashcards/deck/{{ deck.id }}" class="back-link">← Volver al Mazo</a>
+        <h1>Repasando: {{ deck.name }}</h1>
+        <p class="review-mode">Modo: {% if mode == 'new' %}Nuevas{% else %}Pendientes{% endif %}</p>
+    </div>
+
+    <div id="reviewContainer">
+        {% if cards %}
+        <div class="review-progress">
+            <span>Tarjeta <span id="currentIndex">1</span> de <span id="totalCards">{{ cards|length }}</span></span>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div id="cardContainer" class="card-container"
+             data-cards='{{ cards | tojson }}'
+             data-current-index="0">
+            <div class="flashcard" onclick="flipCard()">
+                <div id="cardFront" class="card-face front">
+                    {{ cards[0].front }}
+                </div>
+                <div id="cardBack" class="card-face back" style="display: none;">
+                    {{ cards[0].back }}
+                </div>
+            </div>
+            <p class="flip-hint">Click para voltear</p>
+        </div>
+
+        <div id="ratingButtons" class="rating-buttons" style="display: none;">
+            <p>¿Cómo te fue?</p>
+            <button class="btn btn-rating again" onclick="submitRating(0)">Otra vez</button>
+            <button class="btn btn-rating hard" onclick="submitRating(1)">Difícil</button>
+            <button class="btn btn-rating good" onclick="submitRating(3)">Bien</button>
+            <button class="btn btn-rating easy" onclick="submitRating(5)">Fácil</button>
+        </div>
+
+        <input type="hidden" id="currentCardId" value="{{ cards[0].id }}">
+        {% else %}
+        <div class="empty-state">
+            <h3>No hay tarjetas para repasar</h3>
+            <p>{% if mode == 'new' %}No hay tarjetas nuevas en este mazo.{% else %}No hay tarjetas pendientes.{% endif %}</p>
+            <a href="/flashcards/deck/{{ deck.id }}" class="btn btn-primary">Volver al Mazo</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let cards = [];
+    let currentIndex = 0;
+    let isFlipped = false;
+
+    function init() {
+        const container = document.getElementById('cardContainer');
+        if (container) {
+            cards = JSON.parse(container.dataset.cards);
+            currentIndex = 0;
+        }
+    }
+
+    function flipCard() {
+        isFlipped = !isFlipped;
+        const front = document.getElementById('cardFront');
+        const back = document.getElementById('cardBack');
+        const hint = document.querySelector('.flip-hint');
+        const ratingButtons = document.getElementById('ratingButtons');
+
+        if (isFlipped) {
+            front.style.display = 'none';
+            back.style.display = 'block';
+            hint.style.display = 'none';
+            ratingButtons.style.display = 'flex';
+        } else {
+            front.style.display = 'block';
+            back.style.display = 'none';
+            hint.style.display = 'block';
+            ratingButtons.style.display = 'none';
+        }
+    }
+
+    async function submitRating(rating) {
+        const cardId = document.getElementById('currentCardId').value;
+
+        try {
+            await fetch('/flashcards/review/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `card_id=${cardId}&rating=${rating}`
+            });
+        } catch (error) {
+            console.error('Error submitting rating:', error);
+        }
+
+        nextCard();
+    }
+
+    function nextCard() {
+        currentIndex++;
+        isFlipped = false;
+
+        if (currentIndex >= cards.length) {
+            showCompletion();
+            return;
+        }
+
+        const card = cards[currentIndex];
+        document.getElementById('cardFront').textContent = card.front;
+        document.getElementById('cardBack').textContent = card.back;
+        document.getElementById('currentCardId').value = card.id;
+        document.getElementById('currentIndex').textContent = currentIndex + 1;
+
+        // Reset UI
+        document.getElementById('cardFront').style.display = 'block';
+        document.getElementById('cardBack').style.display = 'none';
+        document.querySelector('.flip-hint').style.display = 'block';
+        document.getElementById('ratingButtons').style.display = 'none';
+
+        // Update progress
+        const progress = ((currentIndex) / cards.length) * 100;
+        document.getElementById('progressFill').style.width = progress + '%';
+    }
+
+    function showCompletion() {
+        document.getElementById('reviewContainer').innerHTML = `
+            <div class="completion-screen">
+                <h2>Sesión completada</h2>
+                <p>Has repasado ${cards.length} tarjetas.</p>
+                <a href="/flashcards/deck/{{ deck.id }}" class="btn btn-primary">Volver al Mazo</a>
+            </div>
+        `;
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+</script>
+{% endblock %}

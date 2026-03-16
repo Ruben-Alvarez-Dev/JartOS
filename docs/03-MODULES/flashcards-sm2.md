@@ -1,7 +1,7 @@
 # Modulo: Flashcards SM-2
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -243,7 +243,7 @@ Crea un nuevo deck.
   "description": "Flashcards del Tema 1",
   "tema_id": 1,
   "card_count": 0,
-  "created_at": "2026-03-16T10:00:00"
+  "created_at": "2025-03-16T10:00:00"
 }
 ```
 
@@ -263,7 +263,7 @@ Lista todos los decks.
       "card_count": 45,
       "new_cards": 10,
       "due_cards": 5,
-      "created_at": "2026-03-16T10:00:00"
+      "created_at": "2025-03-16T10:00:00"
     }
   ],
   "total": 1
@@ -296,7 +296,7 @@ Crea una flashcard manual.
   "interval": 0,
   "repetitions": 0,
   "next_review": null,
-  "created_at": "2026-03-16T10:05:00"
+  "created_at": "2025-03-16T10:05:00"
 }
 ```
 
@@ -377,7 +377,7 @@ Registra una revision de flashcard.
     "interval_after": 15,
     "ease_factor_before": 2.5,
     "ease_factor_after": 2.6,
-    "next_review": "2026-04-01"
+    "next_review": "2025-04-01"
   },
   "review_log_id": 123
 }

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Resultado - Tests{% endblock %}
+
+{% block content %}
+<div class="result-detail-page">
+    <div class="page-header">
+        <a href="/tests" class="back-link">← Volver a Tests</a>
+        <h1>Resultado del Test</h1>
+    </div>
+
+    <!-- Score Card -->
+    <div class="score-card {% if result.passed %}passed{% else %}failed{% endif %}">
+        <div class="score-circle">
+            <span class="score-value">{{ result.score_percentage|round(1) }}%</span>
+        </div>
+        <div class="score-status">
+            <h2>{{ 'APROBADO' if result.passed else 'SUSPENSO' }}</h2>
+        </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-value">{{ result.correct_answers }}</span>
+            <span class="stat-label">Correctas</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{{ result.incorrect_answers }}</span>
+            <span class="stat-label">Incorrectas</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{{ result.unanswered }}</span>
+            <span class="stat-label">Sin Responder</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value">{{ result.time_spent_seconds|round(0) }}s</span>
+            <span class="stat-label">Tiempo</span>
+        </div>
+    </div>
+
+    <!-- Weak Areas -->
+    {% if result.weak_areas %}
+    <div class="section warning">
+        <h2>Areas a Mejorar</h2>
+        <ul class="areas-list">
+            {% for area in result.weak_areas %}
+            <li>{{ area }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Strong Areas -->
+    {% if result.strong_areas %}
+    <div class="section success">
+        <h2>Puntos Fuertes</h2>
+        <ul class="areas-list">
+            {% for area in result.strong_areas %}
+            <li>{{ area }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Recommendations -->
+    {% if result.recommendations %}
+    <div class="section">
+        <h2>Recomendaciones</h2>
+        <ul class="recommendations-list">
+            {% for rec in result.recommendations %}
+            <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Test Info -->
+    {% if test %}
+    <div class="section">
+        <h2>Test</h2>
+        <p><a href="/tests/{{ test.id }}">{{ test.title }}</a></p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

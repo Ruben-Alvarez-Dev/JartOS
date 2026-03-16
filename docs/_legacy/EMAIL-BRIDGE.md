@@ -2,8 +2,8 @@
 
 **Integración con Gmail con Human-in-the-Loop**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -148,14 +148,14 @@ sudo chmod 600 /home/openclaw/.openclaw/credentials/email/gmail.json
 
 ```json
 {
-  "last_checked": "2026-03-10T15:30:00Z",
+  "last_checked": "2025-03-10T15:30:00Z",
   "processed_emails": [
     {
       "id": "msg-001",
       "message_id": "<abc123@gmail.com>",
       "from": "john@example.com",
       "subject": "Reunión mañana",
-      "received": "2026-03-10T15:29:00Z",
+      "received": "2025-03-10T15:29:00Z",
       "notified": true,
       "action": null,
       "action_timestamp": null
@@ -274,7 +274,7 @@ def send_email(to, subject, body, in_reply_to=None):
 
 <b>De:</b> john@example.com
 <b>Asunto:</b> Reunión mañana
-<b>Fecha:</b> 10/03/2026 15:29
+<b>Fecha:</b> 10/03/2025 15:29
 
 <b>Vista previa:</b>
 Hola, ¿podemos reunirnos mañana a las 10am?

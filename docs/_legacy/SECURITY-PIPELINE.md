@@ -2,8 +2,8 @@
 
 **Auditorías Automatizadas y Monitoreo de Seguridad**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -409,7 +409,7 @@ result = run_full_check()
 #   "audit": {"success": True, "summary": {"critical": 0, "warn": 2, "info": 1}},
 #   "anomalies": [],
 #   "metrics": {...},
-#   "timestamp": "2026-03-10T15:30:00"
+#   "timestamp": "2025-03-10T15:30:00"
 # }
 ```
 

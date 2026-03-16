@@ -238,4 +238,4 @@ Gracias a los siguientes reportantes por ayudar a mantener OpenClaw-city seguro:
 
 ---
 
-**Última actualización:** 2026-03-10
+**Última actualización:** 2025-03-10

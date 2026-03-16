@@ -1,7 +1,7 @@
 # Modulo: Dashboard Web
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -199,8 +199,8 @@ Obtiene resumen del dashboard.
     {"tema": 3, "progress": 40}
   ],
   "recent_activity": [
-    {"date": "2026-03-16", "type": "review", "count": 25},
-    {"date": "2026-03-15", "type": "test", "score": 85}
+    {"date": "2025-03-16", "type": "review", "count": 25},
+    {"date": "2025-03-15", "type": "test", "score": 85}
   ],
   "recommendations": [
     {"type": "review", "message": "Tienes 15 tarjetas debidas hoy"},
@@ -218,7 +218,7 @@ Obtiene calendario de repaso.
 **Response (200 OK):**
 ```json
 {
-  "year": 2026,
+  "year": 2025,
   "month": 3,
   "days": [
     {
@@ -244,8 +244,8 @@ Obtiene estadisticas semanales.
 **Response (200 OK):**
 ```json
 {
-  "week_start": "2026-03-10",
-  "week_end": "2026-03-16",
+  "week_start": "2025-03-10",
+  "week_end": "2025-03-16",
   "total_reviews": 150,
   "total_tests": 3,
   "avg_test_score": 78,

@@ -1,7 +1,7 @@
 # 🏗️ Arquitectura del Sistema
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -486,7 +486,7 @@ dashboard> exit            # Salir
 
 ### ADR-001: Gateway en Loopback (127.0.0.1)
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -509,7 +509,7 @@ Gateway **solo escucha en 127.0.0.1:18789** (loopback).
 
 ### ADR-002: SQLite para Memory Store
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -535,7 +535,7 @@ Usar **SQLite** en `/var/lib/openclaw/memory.db`.
 
 ### ADR-003: Mistral API para Embeddings
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -560,7 +560,7 @@ Usar **Mistral API** (`mistral-embed`, 1024 dimensiones).
 
 ### ADR-004: Tools Profile "messaging"
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -599,7 +599,7 @@ Usar perfil **`messaging`** (mínimo necesario) + denegar grupos explícitamente
 
 ### ADR-005: Tailscale para Acceso Remoto
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -630,7 +630,7 @@ Usar **Tailscale** (VPN WireGuard) con ACLs restrictivas.
 
 ### ADR-006: Human-in-the-Loop para Email
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -660,7 +660,7 @@ Implementar **human-in-the-loop**: Todas las acciones requieren aprobación expl
 
 ### ADR-007: Security Pipeline Automatizada
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**
@@ -691,7 +691,7 @@ Ejecutar **security pipeline** automáticamente cada hora vía cron.
 
 ### ADR-008: Session dmScope "per-channel-peer"
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Aceptado
 
 **Contexto:**

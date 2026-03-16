@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Oposiciones Study System{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/dashboard">Oposiciones Study System</a>
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard" class="{% if request.url.path == '/dashboard' %}active{% endif %}">Dashboard</a>
+            <a href="/flashcards" class="{% if '/flashcards' in request.url.path %}active{% endif %}">Flashcards</a>
+            <a href="/tests" class="{% if '/tests' in request.url.path %}active{% endif %}">Tests</a>
+            <a href="/temario" class="{% if '/temario' in request.url.path %}active{% endif %}">Temario</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>Oposiciones Study System v0.1.0 | <a href="/api/docs">API Docs</a></p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

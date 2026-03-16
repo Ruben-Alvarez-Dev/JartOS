@@ -4,7 +4,7 @@
 
 ---
 
-## [2026.3.10] - 2026-03-10
+## [2025.3.10] - 2025-03-10
 
 ### 🎉 Lanzamiento Inicial
 
@@ -138,7 +138,7 @@ Primer release completo del sistema OpenClaw-city con todas las funcionalidades 
 
 ---
 
-## [2026.3.8] - 2026-03-08
+## [2025.3.8] - 2025-03-08
 
 ### Pre-Lanzamiento
 
@@ -157,14 +157,14 @@ Primer release completo del sistema OpenClaw-city con todas las funcionalidades 
 
 ## Próximas Funcionalidades (Roadmap)
 
-### v2026.4.x
+### v2025.4.x
 - [ ] Webhooks configurables
 - [ ] Múltiples usuarios de Telegram
 - [ ] Interfaz web de administración
 - [ ] Exportación de conversaciones
 - [ ] Integración con más proveedores de LLM
 
-### v2026.5.x
+### v2025.5.x
 - [ ] RAG con embeddings locales (sentence-transformers)
 - [ ] Búsqueda híbrida (vector + texto)
 - [ ] Dashboard web
@@ -204,7 +204,7 @@ Este proyecto sigue [Semantic Versioning](https://semver.org/):
 
 Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
 
-## [2026-03-10] - Sprint 0: Infrastructure Setup (Parcial)
+## [2025-03-10] - Sprint 0: Infrastructure Setup (Parcial)
 
 ### ✅ Completado
 - 0.1.1 - Verificar VPS specs (8 CPU Neoverse-N1, 15GB RAM, 150GB SSD)
@@ -224,10 +224,10 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
 ### 🔧 Notas Técnicas
 - VPS: Ubuntu 24.04.4 LTS, 8 cores ARM Neoverse-N1
 - Docker: Ya instalado, no requiere acción
-- Red: openclaw-net existe desde 2026-03-10 12:24
+- Red: openclaw-net existe desde 2025-03-10 12:24
 - Dominio: Usando Tailscale DNS por ahora
 
-## [2026-03-10b] - Sprint 0: LiveKit Self-Hosted ✅
+## [2025-03-10b] - Sprint 0: LiveKit Self-Hosted ✅
 
 ### ✅ Completado
 - 0.2.1 - LiveKit Server configurado (Docker)
@@ -250,7 +250,7 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
 - ⏳ 0.3.2 - Estudiar Agents Framework
 - ⏳ 0.3.3 - Revisar SIP integration guide
 
-## [2026-03-10c] - Bug Fix: Ramiro Email Integration
+## [2025-03-10c] - Bug Fix: Ramiro Email Integration
 
 ### 🐛 Problema Detectado
 - Ramiro decía poder enviar emails pero NO tenía código real
@@ -273,7 +273,7 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
 - ✅ Bot reiniciado
 - ⏳ Pendiente: Añadir handler para detectar "envía un email" en lenguaje natural
 
-## [2026-03-10d] - SECURITY FIX: Verificación Obligatoria + API Keys
+## [2025-03-10d] - SECURITY FIX: Verificación Obligatoria + API Keys
 
 ### 🔒 CRÍTICO - Dos Fallos de Seguridad Corregidos
 
@@ -314,7 +314,7 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
 - Ahora: 85/100 (keys LiveKit aseguradas, verificación activa)
 - Objetivo: 95/100 (mover TODAS las keys a secrets/)
 
-## [2026-03-10e] - SOLO aprobación escrita + Ramiro escueto
+## [2025-03-10e] - SOLO aprobación escrita + Ramiro escueto
 
 ### ✅ CAMBIOS IMPLEMENTADOS
 
@@ -349,7 +349,7 @@ CAPACIDADES:
 - ✅ Respuestas cortas (menos superficie de ataque)
 - ⏳ Pendiente: Mover resto de API keys
 
-## [2026-03-10f] - CHECKLIST COMPLETADO 100%
+## [2025-03-10f] - CHECKLIST COMPLETADO 100%
 
 ### ✅ FASE 3: Seguridad de Red
 - [x] Desactivar IPv6 Público
@@ -387,7 +387,7 @@ CAPACIDADES:
 - ACP Provenance activado
 - Mission Control accesible vía SSH tunnel
 
-## [2026-03-10g] - Sprint 0: LiveKit Self-Hosted ✅ COMPLETADO
+## [2025-03-10g] - Sprint 0: LiveKit Self-Hosted ✅ COMPLETADO
 
 ### 🎉 LIVEKIT SERVER DESPLEGADO
 
@@ -497,7 +497,7 @@ LiveKit server is working correctly! ✅
 - [docs/LIVEKIT-SETUP.md](./docs/LIVEKIT-SETUP.md)
 - [ROADMAP.md](./ROADMAP.md)
 
-## [2026-03-10h] - Sprint 1: LiveKit Server ✅ COMPLETADO
+## [2025-03-10h] - Sprint 1: LiveKit Server ✅ COMPLETADO
 
 ### 🎉 LIVEKIT CLI + WEB CLIENT DESPLEGADOS
 
@@ -610,13 +610,13 @@ curl http://localhost:8443/webclient/
 - [docs/LIVEKIT-SETUP.md](./docs/LIVEKIT-SETUP.md)
 - [ROADMAP.md](./ROADMAP.md)
 
-## [2026-03-10i] - Sprint 1: LiveKit Server ✅ COMPLETADO (Oficial)
+## [2025-03-10i] - Sprint 1: LiveKit Server ✅ COMPLETADO (Oficial)
 
 ### 🎉 LIVEKIT PRODUCTION-READY
 
 **Estado:** ✅ Funcionando  
 **LiveKit Server:** v1.9.12  
-**SSL/TLS:** Let's Encrypt (válido hasta 2026-06-08)  
+**SSL/TLS:** Let's Encrypt (válido hasta 2025-06-08)  
 **Configuración:** Según docs oficiales de LiveKit
 
 ### ✅ Completado - Sprint 1 (20/20 hitos - 100%)
@@ -643,7 +643,7 @@ curl http://localhost:8443/webclient/
 - [x] 1.4.1 - Instalar certbot ✅
 - [x] 1.4.2 - Obtener certificado Let's Encrypt ✅
   - Dominio: livekit.alvarezconsult.es
-  - Válido hasta: 2026-06-08
+  - Válido hasta: 2025-06-08
 - [x] 1.4.3 - Configurar TLS en LiveKit ✅
   - Certs: /opt/livekit/certs/
   - livekit.crt, livekit.key (permisos 600/644)
@@ -747,7 +747,7 @@ curl -sk https://vpn-ruben-vps-openclaw.tail6c9810.ts.net/health
 - [docs/LIVEKIT-SETUP.md](./docs/LIVEKIT-SETUP.md)
 - [ROADMAP.md](./ROADMAP.md)
 
-## [2026-03-11] - Sprint 2: Voice Agent + SIP Integration
+## [2025-03-11] - Sprint 2: Voice Agent + SIP Integration
 
 ### 🎤 Voice Agent Deployed
 

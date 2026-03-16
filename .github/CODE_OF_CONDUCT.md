@@ -67,4 +67,4 @@ Las preguntas frecuentes sobre el Código de Conducta están disponibles en http
 ---
 
 **Versión:** 2.0  
-**Fecha de adopción:** 2026-03-10
+**Fecha de adopción:** 2025-03-10

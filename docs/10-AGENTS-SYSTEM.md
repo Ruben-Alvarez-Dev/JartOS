@@ -1,6 +1,6 @@
 # Sistema de Agentes
 
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 **Version:** 1.0.0
 **Origen:** OPENCLAW-system + JartOS
 
@@ -641,7 +641,7 @@ class AgentMessage:
     params:
       tema: 5
       cantidad: 20
-  timestamp: 2026-03-16T10:00:00
+  timestamp: 2025-03-16T10:00:00
 
 # Builder -> Curator: Solicitar curacion
 - id: msg-002
@@ -653,7 +653,7 @@ class AgentMessage:
     tarea: priorizar_chunks
     params:
       tema: 5
-  timestamp: 2026-03-16T10:01:00
+  timestamp: 2025-03-16T10:01:00
   correlation_id: msg-001
 
 # Builder -> Director: Reportar resultado
@@ -667,7 +667,7 @@ class AgentMessage:
     estado: completado
     flashcards_creadas: 20
     errores: []
-  timestamp: 2026-03-16T10:15:00
+  timestamp: 2025-03-16T10:15:00
   correlation_id: msg-001
 ```
 

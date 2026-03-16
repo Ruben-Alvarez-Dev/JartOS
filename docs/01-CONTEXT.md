@@ -1,6 +1,6 @@
 # Contexto del Proyecto
 
-**Última actualización:** 2026-03-16
+**Última actualización:** 2025-03-16
 **Versión:** 1.0.0 (Integrado)
 
 ---

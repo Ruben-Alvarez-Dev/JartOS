@@ -2,8 +2,8 @@
 
 **Sistema de Memoria Persistente con SQLite**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -66,7 +66,7 @@ ON conversations(user_id, channel, message_index DESC);
 | `message_index` | INTEGER | Índice secuencial por conversación | 0, 1, 2... |
 | `role` | TEXT | Rol del mensaje | `user`, `assistant`, `system` |
 | `content` | TEXT | Contenido del mensaje | "Hola, ¿cómo estás?" |
-| `timestamp` | DATETIME | Fecha/hora de creación | `2026-03-10 15:30:00` |
+| `timestamp` | DATETIME | Fecha/hora de creación | `2025-03-10 15:30:00` |
 | `metadata` | JSON | Metadata adicional | `{"tokens": 150}` |
 
 ---

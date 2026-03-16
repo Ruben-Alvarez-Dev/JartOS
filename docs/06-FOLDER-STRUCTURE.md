@@ -1,7 +1,7 @@
 # Estructura de Carpetas
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -18,7 +18,7 @@
 ## 1. Diagrama de Estructura
 
 ```
-oposiciones-system/
+JartOS/
 |
 +-- .github/
 |   +-- workflows/
@@ -28,8 +28,8 @@ oposiciones-system/
 +-- .venv/                            # Virtual environment (NO commitear)
 |
 +-- backups/                          # Backups de base de datos
-|   +-- temario_20260316.db.bak
-|   +-- oposiciones_20260316.db.bak
+|   +-- temario_20250316.db.bak
+|   +-- oposiciones_20250316.db.bak
 |
 +-- configs/                          # Archivos de configuracion
 |   +-- config.yaml                   # Configuracion principal
@@ -220,7 +220,7 @@ oposiciones-system/
 python scripts/backup_db.py
 
 # Backups automaticos (configurar cron)
-0 2 * * * cd /path/to/oposiciones-system && python scripts/backup_db.py
+0 2 * * * cd ~/CLIs/JartOS && python scripts/backup_db.py
 ```
 
 ### 2.3 configs/
@@ -717,7 +717,7 @@ src/web/
 # =============================================================================
 
 # Directorio base
-BASE_DIR="oposiciones-system"
+BASE_DIR="JartOS"
 mkdir -p "$BASE_DIR" && cd "$BASE_DIR"
 
 # Estructura principal

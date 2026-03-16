@@ -2,8 +2,8 @@
 
 **Guía de Instalación y Configuración**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -429,7 +429,7 @@ WantedBy=multi-user.target
 sudo openclaw-backup
 
 # Output:
-# ✅ Backup completed: /root/backups/openclaw/openclaw-backup-20260310-153000.tar.gz
+# ✅ Backup completed: /root/backups/openclaw/openclaw-backup-20250310-153000.tar.gz
 #    Size: 1.2M
 ```
 

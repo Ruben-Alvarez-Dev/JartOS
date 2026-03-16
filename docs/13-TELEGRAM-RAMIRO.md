@@ -1,6 +1,6 @@
 # Bot Telegram - Ramiro
 
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 **Version:** 1.0.0
 **Origen:** OPENCLAW-city (Produccion)
 

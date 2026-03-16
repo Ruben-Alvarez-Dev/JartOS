@@ -1,6 +1,6 @@
 # 📡 ESPECIFICACIÓN TÉCNICA: Endpoint A2A para OpenClaw Gateway
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Prioridad:** ALTA  
 **Estado:** ⏳ Pendiente de implementación en OpenClaw Gateway
 
@@ -65,7 +65,7 @@ Implementar endpoint `/api/a2a` en OpenClaw Gateway para recibir comunicaciones 
   "message_id": "handshake-001",
   "result": {
     "a2a_channel": "established",
-    "gateway_version": "2026.3.10",
+    "gateway_version": "2025.3.10",
     "capabilities": ["memory_store", "rag_store", "user_profiles"]
   }
 }
@@ -190,7 +190,7 @@ router.post('/', async (req, res) => {
         message_id: messageId,
         result: {
           a2a_channel: 'established',
-          gateway_version: '2026.3.10',
+          gateway_version: '2025.3.10',
           capabilities: ['memory_store', 'rag_store', 'user_profiles']
         }
       });
@@ -267,7 +267,7 @@ curl -X POST http://127.0.0.1:18789/api/a2a \
   -H "Content-Type: application/json" \
   -d '{
     "type": "HANDSHAKE",
-    "timestamp": "2026-03-10T21:00:00Z",
+    "timestamp": "2025-03-10T21:00:00Z",
     "orchestrator": "MCP-Server",
     "payload": {
       "message_type": "ORCHESTRATOR_HANDSHAKE",
@@ -283,7 +283,7 @@ curl -X POST http://127.0.0.1:18789/api/a2a \
   -H "Content-Type: application/json" \
   -d '{
     "type": "COMMAND",
-    "timestamp": "2026-03-10T21:00:00Z",
+    "timestamp": "2025-03-10T21:00:00Z",
     "orchestrator": "MCP-Server",
     "payload": {
       "id": "cmd-001",
@@ -298,7 +298,7 @@ curl -X POST http://127.0.0.1:18789/api/a2a \
   -H "Content-Type: application/json" \
   -d '{
     "type": "STATUS_REQUEST",
-    "timestamp": "2026-03-10T21:00:00Z",
+    "timestamp": "2025-03-10T21:00:00Z",
     "orchestrator": "MCP-Server",
     "payload": {
       "type": "integration"

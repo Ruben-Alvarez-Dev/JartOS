@@ -1,7 +1,7 @@
 # Referencia de APIs
 
 **Version:** 0.1.0
-**Ultima actualizacion:** 2026-03-16
+**Ultima actualizacion:** 2025-03-16
 
 ---
 
@@ -229,9 +229,9 @@ Documentos ingresados:
 
 ID  | Titulo                    | Tema | Paginas | Chunks | Fecha
 ----|---------------------------|------|---------|--------|------------
-1   | La Constitucion           | 1    | 45      | 87     | 2026-03-16
-2   | La Corona                 | 2    | 32      | 65     | 2026-03-16
-3   | Las Cortes Generales      | 3    | 58      | 112    | 2026-03-16
+1   | La Constitucion           | 1    | 45      | 87     | 2025-03-16
+2   | La Corona                 | 2    | 32      | 65     | 2025-03-16
+3   | Las Cortes Generales      | 3    | 58      | 112    | 2025-03-16
 
 Total: 3 documentos, 264 chunks
 ```
@@ -517,7 +517,7 @@ Creando test...
 
 Test creado:
   ID: 1
-  Titulo: Test 2026-03-16
+  Titulo: Test 2025-03-16
   Preguntas: 10
     - Multiple choice: 5
     - Verdadero/Falso: 3
@@ -558,7 +558,7 @@ python -m src.tests.cli take --test 1 --timed
 
 ```
 ================================================================================
-TEST: Test 2026-03-16
+TEST: Test 2025-03-16
 Preguntas: 10 | Tiempo: ilimitado
 ================================================================================
 
@@ -617,8 +617,8 @@ python -m src.tests.cli results --session 1 --detailed
 
 ```
 ================================================================================
-RESULTADOS: Test 2026-03-16
-Sesion: 1 | Fecha: 2026-03-16 15:30
+RESULTADOS: Test 2025-03-16
+Sesion: 1 | Fecha: 2025-03-16 15:30
 ================================================================================
 
 PUNTUACION GENERAL
@@ -683,7 +683,7 @@ python -m src.ai.cli analyze
 ```
 ================================================================================
 ANALISIS DE AREAS DEBILES
-Fecha: 2026-03-16
+Fecha: 2025-03-16
 ================================================================================
 
 AREAS DEBILES DETECTADAS (5):
@@ -788,7 +788,7 @@ python -m src.ai.cli plan [OPTIONS]
 **Ejemplo:**
 
 ```bash
-python -m src.ai.cli plan --hours 21 --start 2026-03-17
+python -m src.ai.cli plan --hours 21 --start 2025-03-17
 ```
 
 **Output:**
@@ -996,7 +996,7 @@ Lista documentos ingresados.
       "tema": 1,
       "total_pages": 45,
       "total_chunks": 87,
-      "created_at": "2026-03-16T10:30:00"
+      "created_at": "2025-03-16T10:30:00"
     }
   ]
 }
@@ -1125,7 +1125,7 @@ Lista decks de flashcards.
       "name": "Tema 1 - Constitucion",
       "card_count": 50,
       "due_count": 12,
-      "created_at": "2026-03-16T10:00:00"
+      "created_at": "2025-03-16T10:00:00"
     }
   ]
 }
@@ -1178,7 +1178,7 @@ Lista flashcards de un deck.
       "back": "Espana se constituye...",
       "ease_factor": 2.5,
       "interval": 3,
-      "next_review": "2026-03-19"
+      "next_review": "2025-03-19"
     }
   ]
 }
@@ -1227,7 +1227,7 @@ Registra resultado de repaso.
   "flashcard_id": 1,
   "new_interval": 6,
   "new_ease_factor": 2.6,
-  "next_review": "2026-03-22"
+  "next_review": "2025-03-22"
 }
 ```
 
@@ -1249,7 +1249,7 @@ Lista tests disponibles.
       "question_count": 10,
       "completed": true,
       "best_score": 80,
-      "created_at": "2026-03-16T10:00:00"
+      "created_at": "2025-03-16T10:00:00"
     }
   ]
 }
@@ -1298,7 +1298,7 @@ Inicia sesion de test.
   "session_id": 1,
   "test_id": 1,
   "questions": [...],
-  "started_at": "2026-03-16T15:00:00"
+  "started_at": "2025-03-16T15:00:00"
 }
 ```
 
@@ -1416,7 +1416,7 @@ Bot: Buscando respuesta...
   "success": true,
   "data": { ... },
   "meta": {
-    "timestamp": "2026-03-16T15:30:00Z",
+    "timestamp": "2025-03-16T15:30:00Z",
     "request_id": "abc123"
   }
 }
@@ -1435,7 +1435,7 @@ Bot: Buscando respuesta...
     }
   },
   "meta": {
-    "timestamp": "2026-03-16T15:30:00Z",
+    "timestamp": "2025-03-16T15:30:00Z",
     "request_id": "abc123"
   }
 }

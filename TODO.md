@@ -1,6 +1,6 @@
 # ✅ TODO - OPENCLAW-CITY
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** Sprint 0 en progreso  
 **GitHub:** https://github.com/Ruben-Alvarez-Dev/OPENCLAW-city
 
@@ -58,7 +58,7 @@ WEB CLIENT TEST
 
 SSL/TLS (Oficial LiveKit Docs)
 [x] 1.4.1 - Instalar certbot ✅
-[x] 1.4.2 - Obtener certificado Let's Encrypt ✅ (válido hasta 2026-06-08)
+[x] 1.4.2 - Obtener certificado Let's Encrypt ✅ (válido hasta 2025-06-08)
 [x] 1.4.3 - Configurar TLS en LiveKit ✅ (certs en /opt/livekit/certs/)
 [x] 1.4.4 - Configurar TURN server ✅ (puerto 5349 TLS)
 [x] 1.4.5 - Configurar firewall ✅ (443, 7881, 5349, 50000-60000/udp)
@@ -417,6 +417,6 @@ git push
 
 ---
 
-**Última actualización:** 2026-03-10
+**Última actualización:** 2025-03-10
 **Próxima actualización:** Después de completar Sprint 1
 **Estado:** Sprint 0 ✅ Completado (7/10 tareas - 70%)

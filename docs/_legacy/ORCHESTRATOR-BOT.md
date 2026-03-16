@@ -2,8 +2,8 @@
 
 **Asistente Personal de IA en Telegram**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 

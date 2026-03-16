@@ -169,7 +169,7 @@ jartos/
 
 ```bash
 # 1. Clonar repositorio
-git clone https://github.com/Ruben-Alvarez-Dev/jartos.git
+git clone https://github.com/Ruben-Alvarez-Dev/JartOS.git
 cd jartos
 
 # 2. Crear entorno virtual
@@ -397,9 +397,9 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para detalles.
 ## Contacto
 
 - **GitHub:** [@Ruben-Alvarez-Dev](https://github.com/Ruben-Alvarez-Dev)
-- **Proyecto:** https://github.com/Ruben-Alvarez-Dev/jartos
+- **Proyecto:** https://github.com/Ruben-Alvarez-Dev/JartOS
 
 ---
 
-**Última actualización:** 2026-03-16
+**Última actualización:** 2025-03-16
 **Versión:** 0.1.0

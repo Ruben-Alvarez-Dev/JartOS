@@ -2,8 +2,8 @@
 
 **Interfaz de Línea de Comandos para Observabilidad**
 
-**Última actualización:** 2026-03-10  
-**Versión:** 2026.3.10
+**Última actualización:** 2025-03-10  
+**Versión:** 2025.3.10
 
 ---
 
@@ -96,7 +96,7 @@ dashboard> status
    • security: 5 eventos, avg: 95.00
 
 ============================================================
-Report generado: 2026-03-10T15:30:00
+Report generado: 2025-03-10T15:30:00
 ============================================================
 ```
 
@@ -156,11 +156,11 @@ dashboard> security 20
 
 🔒 LOGS DE SEGURIDAD (últimos 20)
 ============================================================
-✅ 2026-03-10 15:30:00 ℹ️ SECURITY_CHECK
-✅ 2026-03-10 14:30:00 ℹ️ SECURITY_CHECK
-✅ 2026-03-10 13:30:00 ℹ️ SECURITY_CHECK
-⏳ 2026-03-10 12:15:00 ⚠️ UNAUTHORIZED_ACCESS
-✅ 2026-03-10 11:30:00 ℹ️ SECURITY_CHECK
+✅ 2025-03-10 15:30:00 ℹ️ SECURITY_CHECK
+✅ 2025-03-10 14:30:00 ℹ️ SECURITY_CHECK
+✅ 2025-03-10 13:30:00 ℹ️ SECURITY_CHECK
+⏳ 2025-03-10 12:15:00 ⚠️ UNAUTHORIZED_ACCESS
+✅ 2025-03-10 11:30:00 ℹ️ SECURITY_CHECK
 ...
 ```
 
@@ -185,11 +185,11 @@ dashboard> conversations
   • Perfiles guardados: 1
 
   Últimos mensajes:
-    👤 795606301: Hola, ¿me ayudas con código?... (2026-03-10 15:28)
-    🤖 assistant: ¡Claro! ¿Qué necesitas?... (2026-03-10 15:28)
-    👤 795606301: ¿Cómo leo un archivo JSON?... (2026-03-10 15:27)
-    🤖 assistant: Usa json.load()... (2026-03-10 15:27)
-    👤 795606301: Gracias, funcionó... (2026-03-10 15:26)
+    👤 795606301: Hola, ¿me ayudas con código?... (2025-03-10 15:28)
+    🤖 assistant: ¡Claro! ¿Qué necesitas?... (2025-03-10 15:28)
+    👤 795606301: ¿Cómo leo un archivo JSON?... (2025-03-10 15:27)
+    🤖 assistant: Usa json.load()... (2025-03-10 15:27)
+    👤 795606301: Gracias, funcionó... (2025-03-10 15:26)
 ```
 
 ---

@@ -1,6 +1,6 @@
 # 🎯 OPENCLAW + LIVEKIT + ZADARMA - PLAN MAESTRO
 
-**Fecha:** 2026-03-11  
+**Fecha:** 2025-03-11  
 **Estado General:** 🟡 En progreso  
 **Prioridad:** Zadarma SIP → LiveKit → OpenClaw Integration
 
@@ -50,7 +50,7 @@
 ## 📅 SPRINTS RESTANTES
 
 ### Sprint 2 (ACTUAL): LiveKit Agents + OpenClaw
-**Duración:** 2026-03-10 a 2026-03-17  
+**Duración:** 2025-03-10 a 2025-03-17  
 **Estado:** 🟡 60% completado
 
 **Pendientes:**
@@ -60,7 +60,7 @@
 4. Test end-to-end
 
 ### Sprint 3: TTS Adapter
-**Duración:** 2026-03-17 a 2026-03-24
+**Duración:** 2025-03-17 a 2025-03-24
 
 **Objetivos:**
 - [ ] Piper TTS (ligero, español)
@@ -69,7 +69,7 @@
 - [ ] Voice Manager dashboard
 
 ### Sprint 4: STT Adapter
-**Duración:** 2026-03-24 a 2026-03-31
+**Duración:** 2025-03-24 a 2025-03-31
 
 **Objetivos:**
 - [ ] Faster-Whisper (español)
@@ -78,7 +78,7 @@
 - [ ] Streaming STT
 
 ### Sprint 5: LLM Intermediario
-**Duración:** 2026-03-31 a 2026-04-07
+**Duración:** 2025-03-31 a 2025-04-07
 
 **Objetivos:**
 - [ ] Ollama Server
@@ -87,7 +87,7 @@
 - [ ] API Router OpenAI-compatible
 
 ### Sprint 6: SIP Integration
-**Duración:** 2026-04-07 a 2026-04-14
+**Duración:** 2025-04-07 a 2025-04-14
 
 **Objetivos:**
 - [ ] LiveKit SIP Trunk
@@ -96,7 +96,7 @@
 - [ ] IVR básico
 
 ### Sprint 7: Egress/Ingress
-**Duración:** 2026-04-14 a 2026-04-21
+**Duración:** 2025-04-14 a 2025-04-21
 
 **Objetivos:**
 - [ ] Room Egress (grabación)
@@ -105,7 +105,7 @@
 - [ ] SIP Ingress múltiple
 
 ### Sprint 8: Integración OpenClaw Completa
-**Duración:** 2026-04-21 a 2026-04-28
+**Duración:** 2025-04-21 a 2025-04-28
 
 **Objetivos:**
 - [ ] Voice Agent ↔ OpenClaw API
@@ -114,7 +114,7 @@
 - [ ] Logs centralizados
 
 ### Sprint 9: Testing + Docs
-**Duración:** 2026-04-28 a 2026-05-05
+**Duración:** 2025-04-28 a 2025-05-05
 
 **Objetivos:**
 - [ ] E2E Testing
@@ -153,7 +153,7 @@
 | **Secrets** | ✅ Asegurados | `/etc/openclaw/secrets/` (600) |
 | **Git** | ✅ Protegido | .gitignore actualizado |
 | **Monitorización** | ✅ Activa | Cada 5 minutos |
-| **Incidente 2026-03-11** | ✅ Mitigado | Keys expuestas → monitorizadas |
+| **Incidente 2025-03-11** | ✅ Mitigado | Keys expuestas → monitorizadas |
 
 ---
 
@@ -203,5 +203,5 @@
 
 ---
 
-**Última actualización:** 2026-03-11  
+**Última actualización:** 2025-03-11  
 **Próxima revisión:** Después de activar Zadarma SIP trunk

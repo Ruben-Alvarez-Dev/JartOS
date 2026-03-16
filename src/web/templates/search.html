@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar: {{ query }} - Temario{% endblock %}
+
+{% block content %}
+<div class="search-page">
+    <div class="page-header">
+        <a href="/temario" class="back-link">← Volver al Temario</a>
+        <h1>Buscar en Temario</h1>
+    </div>
+
+    <!-- Search Form -->
+    <div class="search-section">
+        <form action="/temario/search" method="get" class="search-form">
+            <input type="text" name="q" value="{{ query }}" placeholder="Buscar..." class="search-input" required>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+
+    <!-- Search Results -->
+    {% if search_performed %}
+    <div class="section">
+        <h2>Resultados para "{{ query }}" ({{ results|length }})</h2>
+
+        {% if results %}
+        <div class="search-results">
+            {% for result in results %}
+            <div class="result-item">
+                <div class="result-header">
+                    {% if result.chunk.tema %}
+                    <span class="result-tema">Tema {{ result.chunk.tema }}</span>
+                    {% endif %}
+                    <span class="result-score">Relevancia: {{ result.score|round(2) }}</span>
+                </div>
+                {% if result.chunk.titulo %}
+                <h3 class="result-title">{{ result.chunk.titulo }}</h3>
+                {% endif %}
+                <p class="result-content">{{ result.chunk.content[:500] }}{% if result.chunk.content|length > 500 %}...{% endif %}</p>
+                <div class="result-meta">
+                    <span>Chunk #{{ result.chunk.id }}</span>
+                    {% if result.chunk.page_number %}
+                    <span>Página {{ result.chunk.page_number }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No se encontraron resultados para "{{ query }}".</p>
+            <p>Intenta con otros términos o revisa que el temario tenga embeddings generados.</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

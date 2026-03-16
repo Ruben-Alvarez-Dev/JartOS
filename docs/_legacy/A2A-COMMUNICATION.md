@@ -1,6 +1,6 @@
 # 🤝 LIVEKIT ↔ OPENCLAW - COMUNICACIÓN A2A (Agent-to-Agent)
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Tipo:** Handshake inicial - Sprint 2  
 **Participantes:** LiveKit Agents Worker ↔ OpenClaw Gateway
 
@@ -14,7 +14,7 @@
 ```json
 {
   "message_type": "A2A_HANDSHAKE",
-  "timestamp": "2026-03-10T21:00:00Z",
+  "timestamp": "2025-03-10T21:00:00Z",
   "sender": {
     "name": "LiveKit Agents Worker",
     "version": "0.8.0",
@@ -28,7 +28,7 @@
   },
   "recipient": {
     "name": "OpenClaw Gateway",
-    "version": "2026.3.10",
+    "version": "2025.3.10",
     "endpoint": "http://127.0.0.1:18789"
   },
   "purpose": "Establecer canal de comunicación para integración de voz",
@@ -75,11 +75,11 @@
 ```json
 {
   "message_type": "A2A_HANDSHAKE_RESPONSE",
-  "timestamp": "2026-03-10T21:00:01Z",
+  "timestamp": "2025-03-10T21:00:01Z",
   "status": "accepted",
   "sender": {
     "name": "OpenClaw Gateway",
-    "version": "2026.3.10",
+    "version": "2025.3.10",
     "capabilities": [
       "memory_management",
       "rag_search",
@@ -244,5 +244,5 @@ Usuario → LiveKit STT → Texto
 ---
 
 **Estado:** 🟡 En progreso (Sprint 2)  
-**Última actualización:** 2026-03-10  
+**Última actualización:** 2025-03-10  
 **Próxima actualización:** Después de implementar handshake API

@@ -1,6 +1,6 @@
 # 📱 A2A TELEGRAM NOTIFICATIONS - GUÍA DE USO
 
-**Fecha:** 2026-03-10  
+**Fecha:** 2025-03-10  
 **Estado:** ✅ Funcionando  
 **Telegram Chat ID:** 795606301
 
@@ -57,7 +57,7 @@ Payload:
 ```json
 {
   "type": "HANDSHAKE",
-  "timestamp": "2026-03-10T21:33:24...",
+  "timestamp": "2025-03-10T21:33:24...",
   "orchestrator": "MCP-Server",
   "payload": {...}
 }
@@ -83,8 +83,8 @@ Al final de cada sesión, se envía un resumen:
 ```
 📊 A2A Session Summary
 
-Session ID: `session-20260310-213324`
-Started: `2026-03-10T21:33:24`
+Session ID: `session-20250310-213324`
+Started: `2025-03-10T21:33:24`
 Total Communications: 14
 
 By Direction:
@@ -173,7 +173,7 @@ grep "Error\|Failed" /var/log/openclaw/a2a/telegram_notifications.log | tail -10
 
 ---
 
-**Última actualización:** 2026-03-10  
+**Última actualización:** 2025-03-10  
 **Estado:** ✅ Funcionando  
 **Total Comunicaciones Registradas:** 14  
 **Notificaciones Telegram Enviadas:** 14+

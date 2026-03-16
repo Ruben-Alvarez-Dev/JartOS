@@ -1,6 +1,6 @@
 # 📞 ZADARMA + LIVEKIT INTEGRATION
 
-**Fecha:** 2026-03-11  
+**Fecha:** 2025-03-11  
 **Estado:** 🟡 En progreso  
 **Sprint:** 2
 
@@ -187,4 +187,4 @@ TwirpError(code=internal, message=sip not connected (redis required))
 
 ---
 
-**Última actualización:** 2026-03-11
+**Última actualización:** 2025-03-11
